@@ -1,0 +1,2 @@
+pod "SocketRocket"
+pod "AFNetworking"

@@ -21,6 +21,14 @@
 		7F3485961949CF4600AA004E /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7F3485781949CF4500AA004E /* UIKit.framework */; };
 		7F34859E1949CF4600AA004E /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 7F34859C1949CF4600AA004E /* InfoPlist.strings */; };
 		7F3485A01949CF4600AA004E /* Socket_IO_iOSTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F34859F1949CF4600AA004E /* Socket_IO_iOSTests.m */; };
+		7F3485AC1949CF7600AA004E /* SISocketIOClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F3485AB1949CF7600AA004E /* SISocketIOClient.m */; };
+		7F3485AF1949CF8400AA004E /* SISocketIOPacket.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F3485AE1949CF8400AA004E /* SISocketIOPacket.m */; };
+		7F3485B21949CF9000AA004E /* SISocketIOTransport.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F3485B11949CF9000AA004E /* SISocketIOTransport.m */; };
+		7F3485B51949CF9F00AA004E /* SISocketIOParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F3485B41949CF9F00AA004E /* SISocketIOParser.m */; };
+		7F3485B81949D03200AA004E /* SISocketIOTransportPolling.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F3485B71949D03200AA004E /* SISocketIOTransportPolling.m */; };
+		7F3485BB1949D05800AA004E /* SISocketIOTransportWebSocket.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F3485BA1949D05800AA004E /* SISocketIOTransportWebSocket.m */; };
+		7F3485BE1949F86800AA004E /* SISocketIOTransportFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F3485BD1949F86800AA004E /* SISocketIOTransportFactory.m */; };
+		DD6EE0C0334843BE9A7B4052 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 4C811E76DC8E46A5ADD7CFE3 /* libPods.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -34,6 +42,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		4C811E76DC8E46A5ADD7CFE3 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		7F3485711949CF4500AA004E /* Socket.IO-iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Socket.IO-iOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		7F3485741949CF4500AA004E /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		7F3485761949CF4500AA004E /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -53,6 +62,21 @@
 		7F34859B1949CF4600AA004E /* Socket.IO-iOSTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Socket.IO-iOSTests-Info.plist"; sourceTree = "<group>"; };
 		7F34859D1949CF4600AA004E /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		7F34859F1949CF4600AA004E /* Socket_IO_iOSTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Socket_IO_iOSTests.m; sourceTree = "<group>"; };
+		7F3485AA1949CF7600AA004E /* SISocketIOClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SISocketIOClient.h; sourceTree = "<group>"; };
+		7F3485AB1949CF7600AA004E /* SISocketIOClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SISocketIOClient.m; sourceTree = "<group>"; };
+		7F3485AD1949CF8400AA004E /* SISocketIOPacket.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SISocketIOPacket.h; sourceTree = "<group>"; };
+		7F3485AE1949CF8400AA004E /* SISocketIOPacket.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SISocketIOPacket.m; sourceTree = "<group>"; };
+		7F3485B01949CF9000AA004E /* SISocketIOTransport.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SISocketIOTransport.h; sourceTree = "<group>"; };
+		7F3485B11949CF9000AA004E /* SISocketIOTransport.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SISocketIOTransport.m; sourceTree = "<group>"; };
+		7F3485B31949CF9F00AA004E /* SISocketIOParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SISocketIOParser.h; sourceTree = "<group>"; };
+		7F3485B41949CF9F00AA004E /* SISocketIOParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SISocketIOParser.m; sourceTree = "<group>"; };
+		7F3485B61949D03200AA004E /* SISocketIOTransportPolling.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SISocketIOTransportPolling.h; sourceTree = "<group>"; };
+		7F3485B71949D03200AA004E /* SISocketIOTransportPolling.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SISocketIOTransportPolling.m; sourceTree = "<group>"; };
+		7F3485B91949D05800AA004E /* SISocketIOTransportWebSocket.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SISocketIOTransportWebSocket.h; sourceTree = "<group>"; };
+		7F3485BA1949D05800AA004E /* SISocketIOTransportWebSocket.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SISocketIOTransportWebSocket.m; sourceTree = "<group>"; };
+		7F3485BC1949F86800AA004E /* SISocketIOTransportFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SISocketIOTransportFactory.h; sourceTree = "<group>"; };
+		7F3485BD1949F86800AA004E /* SISocketIOTransportFactory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SISocketIOTransportFactory.m; sourceTree = "<group>"; };
+		C5D9D5A2D9B4429A92E43559 /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,6 +87,7 @@
 				7F3485771949CF4500AA004E /* CoreGraphics.framework in Frameworks */,
 				7F3485791949CF4500AA004E /* UIKit.framework in Frameworks */,
 				7F3485751949CF4500AA004E /* Foundation.framework in Frameworks */,
+				DD6EE0C0334843BE9A7B4052 /* libPods.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -82,10 +107,12 @@
 		7F3485681949CF4500AA004E = {
 			isa = PBXGroup;
 			children = (
+				7F3485A91949CF4D00AA004E /* Classes */,
 				7F34857A1949CF4500AA004E /* Socket.IO-iOS */,
 				7F3485991949CF4600AA004E /* Socket.IO-iOSTests */,
 				7F3485731949CF4500AA004E /* Frameworks */,
 				7F3485721949CF4500AA004E /* Products */,
+				C5D9D5A2D9B4429A92E43559 /* Pods.xcconfig */,
 			);
 			sourceTree = "<group>";
 		};
@@ -105,6 +132,7 @@
 				7F3485761949CF4500AA004E /* CoreGraphics.framework */,
 				7F3485781949CF4500AA004E /* UIKit.framework */,
 				7F3485931949CF4600AA004E /* XCTest.framework */,
+				4C811E76DC8E46A5ADD7CFE3 /* libPods.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -152,6 +180,35 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		7F3485A91949CF4D00AA004E /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				7F3485AA1949CF7600AA004E /* SISocketIOClient.h */,
+				7F3485AB1949CF7600AA004E /* SISocketIOClient.m */,
+				7F3485AD1949CF8400AA004E /* SISocketIOPacket.h */,
+				7F3485AE1949CF8400AA004E /* SISocketIOPacket.m */,
+				7F3485B31949CF9F00AA004E /* SISocketIOParser.h */,
+				7F3485B41949CF9F00AA004E /* SISocketIOParser.m */,
+				7F348641194A884E00AA004E /* Transport */,
+			);
+			name = Classes;
+			sourceTree = "<group>";
+		};
+		7F348641194A884E00AA004E /* Transport */ = {
+			isa = PBXGroup;
+			children = (
+				7F3485B61949D03200AA004E /* SISocketIOTransportPolling.h */,
+				7F3485B71949D03200AA004E /* SISocketIOTransportPolling.m */,
+				7F3485B91949D05800AA004E /* SISocketIOTransportWebSocket.h */,
+				7F3485BA1949D05800AA004E /* SISocketIOTransportWebSocket.m */,
+				7F3485BC1949F86800AA004E /* SISocketIOTransportFactory.h */,
+				7F3485BD1949F86800AA004E /* SISocketIOTransportFactory.m */,
+				7F3485B01949CF9000AA004E /* SISocketIOTransport.h */,
+				7F3485B11949CF9000AA004E /* SISocketIOTransport.m */,
+			);
+			name = Transport;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -159,9 +216,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 7F3485A31949CF4600AA004E /* Build configuration list for PBXNativeTarget "Socket.IO-iOS" */;
 			buildPhases = (
+				8EE67A0D5B0A40D7945A466F /* Check Pods Manifest.lock */,
 				7F34856D1949CF4500AA004E /* Sources */,
 				7F34856E1949CF4500AA004E /* Frameworks */,
 				7F34856F1949CF4500AA004E /* Resources */,
+				6A84AB9C00F54EC2A59B1AC5 /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -245,13 +304,53 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		6A84AB9C00F54EC2A59B1AC5 /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Pods-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		8EE67A0D5B0A40D7945A466F /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		7F34856D1949CF4500AA004E /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7F3485B21949CF9000AA004E /* SISocketIOTransport.m in Sources */,
+				7F3485AC1949CF7600AA004E /* SISocketIOClient.m in Sources */,
 				7F3485851949CF4600AA004E /* SIAppDelegate.m in Sources */,
+				7F3485BE1949F86800AA004E /* SISocketIOTransportFactory.m in Sources */,
+				7F3485B51949CF9F00AA004E /* SISocketIOParser.m in Sources */,
+				7F3485BB1949D05800AA004E /* SISocketIOTransportWebSocket.m in Sources */,
 				7F34858B1949CF4600AA004E /* SIViewController.m in Sources */,
+				7F3485AF1949CF8400AA004E /* SISocketIOPacket.m in Sources */,
+				7F3485B81949D03200AA004E /* SISocketIOTransportPolling.m in Sources */,
 				7F3485811949CF4600AA004E /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -374,6 +473,7 @@
 		};
 		7F3485A41949CF4600AA004E /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = C5D9D5A2D9B4429A92E43559 /* Pods.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
@@ -387,6 +487,7 @@
 		};
 		7F3485A51949CF4600AA004E /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = C5D9D5A2D9B4429A92E43559 /* Pods.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
@@ -457,6 +558,7 @@
 				7F3485A51949CF4600AA004E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		7F3485A61949CF4600AA004E /* Build configuration list for PBXNativeTarget "Socket.IO-iOSTests" */ = {
 			isa = XCConfigurationList;
@@ -465,6 +567,7 @@
 				7F3485A81949CF4600AA004E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
