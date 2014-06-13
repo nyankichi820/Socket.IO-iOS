@@ -8,6 +8,13 @@
 
 #import <Foundation/Foundation.h>
 
+
+typedef void (^SISocketIOTransportReceiveEventSuccessBlocks)(NSString *eventName,NSDictionary*message);
+typedef void (^SISocketIOTransportOpenedBlocks)(void);
+typedef void (^SISocketIOTransportClosedBlocks)(void);
+typedef void (^SISocketIOTransportFailureBlocks)(NSError *error);
+
+
 @protocol SISocketIOTransport <NSObject>
 +(NSString*)transportName;
 -(NSString*)protocol;
@@ -30,8 +37,12 @@
 @property (nonatomic) NSArray *transports;
 @property (nonatomic) NSString *timestampParam;
 
+@property (nonatomic,strong) SISocketIOTransportReceiveEventSuccessBlocks receiveEventSuccessBlocks;
+@property (nonatomic,strong) SISocketIOTransportFailureBlocks failureBlocks;
+@property (nonatomic,strong) SISocketIOTransportOpenedBlocks openedBlocks;
+@property (nonatomic,strong) SISocketIOTransportClosedBlocks closedBlocks;
 
--(NSURL*)endpointURL;
+-(NSString*)endpointURL;
 -(void)connect;
 
 @end

@@ -13,25 +13,30 @@
 
 @implementation SISocketIOTransport
 
--(NSString*)query{
-    if(!self.timestamp){
-        self.timestamp =[NSDate date].timeIntervalSince1970;
+
+- (id) init{
+    self = [super init];
+    if(self){
+        self.timestamp = 0;
         
     }
-    if(!self.timestamps){
-        self.timestamps = 0;
-    }
-    else{
-        self.timestamps++;
-    }
-    return [NSString stringWithFormat:@"EIO=2&t=%d-%d&transport=%@",self.timestamp,self.timestamps,self.class.transportName];
+    
+    return self;
     
 }
 
--(NSURL*)endpointURL{
-    return [NSURL URLWithString:
-            [NSString stringWithFormat:@"%@://%@:%d/%@?%@",[self protocol],[self host],[self port],[self path],[self query]]];
+-(NSString*)query{
+        self.timestamp =[NSDate date].timeIntervalSince1970;
+    NSString *query = [NSString stringWithFormat:@"EIO=2&t=%d-%d&transport=%@",self.timestamp,self.timestamps,self.class.transportName];
+    self.timestamps++;
+    return query;
+}
+
+-(NSString*)endpointURL{
     
+    NSString *url = [NSString stringWithFormat:@"%@://%@:%d/%@/?%@",[self protocol],[self host],[self port],[self path],[self query]];
+    NSLog(url);
+    return url;
 }
 
 @end

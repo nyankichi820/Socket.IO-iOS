@@ -11,6 +11,12 @@
 
 @implementation SISocketIOTransportPolling
 
+
+
+-(NSString*)protocol{
+    return self.useSecure ? @"https" : @"http";
+}
+
 +(NSString*)transportName{
     return @"polling";
 }
@@ -19,12 +25,20 @@
     
     
     AFHTTPRequestOperationManager* manager = [AFHTTPRequestOperationManager manager];
-    
+    manager.responseSerializer.acceptableContentTypes = [NSSet setWithObject:@"application/octet-stream"];
     [manager GET:[self endpointURL]
       parameters:nil success:^(AFHTTPRequestOperation *operation, id responseObject) {
-    
+          NSLog(@"data %@",operation.responseString);
+          if(!operation.responseString){
+              [self connect];
+          }
+          else if(self.openedBlocks){
+              self.openedBlocks();
+          }
       } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
-      
+          if(self.failureBlocks){
+              self.failureBlocks(error);
+          }
       }];
     
     

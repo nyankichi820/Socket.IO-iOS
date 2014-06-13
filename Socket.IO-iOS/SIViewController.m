@@ -9,7 +9,7 @@
 #import "SIViewController.h"
 #import "SISocketIOClient.h"
 @interface SIViewController ()
-
+@property(nonatomic )  SISocketIOClient *client;
 @end
 
 @implementation SIViewController
@@ -18,8 +18,8 @@
 {
     [super viewDidLoad];
     
-    SISocketIOClient *client = [[SISocketIOClient alloc] initWithHost:@"localhost" onPort:3000];
-    [client connect];
+    self.client = [[SISocketIOClient alloc] initWithHost:@"localhost" onPort:3000];
+    [self.client connect];
 	// Do any additional setup after loading the view, typically from a nib.
 }
 

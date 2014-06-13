@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>D1DFD26C-C7FC-446E-87A2-4C32EFB588DE</string>
+	<key>IDESourceControlProjectName</key>
+	<string>Socket.IO-iOS</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>0E2B1F55-416E-48C4-B6C5-740B0236159F</key>
+		<string>https://github.com/nyankichi820/Socket.IO-iOS.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>Socket.IO-iOS.xcworkspace</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>0E2B1F55-416E-48C4-B6C5-740B0236159F</key>
+		<string>..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>https://github.com/nyankichi820/Socket.IO-iOS.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>110</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>0E2B1F55-416E-48C4-B6C5-740B0236159F</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>0E2B1F55-416E-48C4-B6C5-740B0236159F</string>
+			<key>IDESourceControlWCCName</key>
+			<string>Socket.IO-iOS</string>
+		</dict>
+	</array>
+</dict>
+</plist>

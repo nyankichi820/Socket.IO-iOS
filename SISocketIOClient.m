@@ -9,6 +9,11 @@
 #import "SISocketIOClient.h"
 #import "SISocketIOTransportFactory.h"
 
+@interface SISocketIOClient ()
+@property (nonatomic,strong) SISocketIOTransportPolling *transportPolling;
+@property (nonatomic,strong) SISocketIOTransportWebSocket *transportWebSocket;
+@end
+
 @implementation SISocketIOClient
 
 
@@ -43,11 +48,25 @@
 
 
 -(void)connect{
-    SISocketIOTransport *transportPolling = [SISocketIOTransportFactory createTransport:@"polling"];
-    [transportPolling connect];
-    SISocketIOTransport *transportWebSocket = [SISocketIOTransportFactory createTransport:@"websocket"];
-     [transportWebSocket connect];
+    self.transportPolling = [SISocketIOTransportFactory createTransport:@"polling"];
     
+    self.transportPolling.host = self.host;
+    self.transportPolling.port = self.port;
+    self.transportPolling.path = self.path ? self.path : @"socket.io";
+    self.transportPolling.openedBlocks = ^(){
+        
+    };
+    [self.transportPolling connect];
+    
+    
+    self.transportWebSocket = [SISocketIOTransportFactory createTransport:@"websocket"];
+    self.transportWebSocket.host = self.host;
+    self.transportWebSocket.port = self.port;
+    self.transportWebSocket.path = self.path ? self.path : @"socket.io";
+    [self.transportWebSocket connect];
+    self.transportPolling.openedBlocks = ^(){
+        
+    };
     
 }
 @end
