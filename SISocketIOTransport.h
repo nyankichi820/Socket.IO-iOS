@@ -9,6 +9,13 @@
 #import <Foundation/Foundation.h>
 
 
+typedef enum SISocketIOTransportStatus : int {
+    SISocketIOTransportStatusClosed,
+    SISocketIOTransportStatusOpening,
+    SISocketIOTransportStatusOpen
+} SISocketIOTransportStatus;
+
+
 typedef void (^SISocketIOTransportReceiveEventSuccessBlocks)(NSString *eventName,NSDictionary*message);
 typedef void (^SISocketIOTransportOpenedBlocks)(void);
 typedef void (^SISocketIOTransportClosedBlocks)(void);
@@ -22,6 +29,7 @@ typedef void (^SISocketIOTransportFailureBlocks)(NSError *error);
 
 
 @interface SISocketIOTransport : NSObject<SISocketIOTransport>
+@property (nonatomic) SISocketIOTransportStatus readyState;
 @property (nonatomic) NSInteger timestamp;
 @property (nonatomic) NSInteger timestamps;
 @property (nonatomic) NSString *host;
