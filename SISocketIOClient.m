@@ -47,26 +47,38 @@
 }
 
 
--(void)connect{
-    self.transportPolling = [SISocketIOTransportFactory createTransport:@"polling"];
+-(void)emit:(NSString*)eventName params:(NSDictionary*)params{
     
+    
+}
+
+-(void)onOpen:(id <SISocketIOTransport>)transport{
+    if([transport isEqual:self.transportPolling]){
+        self.transportWebSocket = (SISocketIOTransportWebSocket*)[SISocketIOTransportFactory createTransport:@"websocket"];
+        self.transportWebSocket.host = self.host;
+        self.transportWebSocket.port = self.port;
+        self.transportWebSocket.sid  = self.transportPolling.sid;
+        self.transportWebSocket.path = self.path ? self.path : @"socket.io";
+        [self.transportWebSocket open];
+        
+    }
+    else{
+        
+    }
+}
+
+-(void)onClose:(id <SISocketIOTransport>)transport{
+    
+}
+
+-(void)open{
+    self.transportPolling = (SISocketIOTransportPolling*)[SISocketIOTransportFactory createTransport:@"polling"];
+    self.transportPolling.delegate = self;
     self.transportPolling.host = self.host;
     self.transportPolling.port = self.port;
     self.transportPolling.path = self.path ? self.path : @"socket.io";
-    self.transportPolling.openedBlocks = ^(){
-        
-    };
-    [self.transportPolling connect];
-    
-    
-    self.transportWebSocket = [SISocketIOTransportFactory createTransport:@"websocket"];
-    self.transportWebSocket.host = self.host;
-    self.transportWebSocket.port = self.port;
-    self.transportWebSocket.path = self.path ? self.path : @"socket.io";
-    [self.transportWebSocket connect];
-    self.transportPolling.openedBlocks = ^(){
-        
-    };
+   
+    [self.transportPolling open];
     
 }
 @end

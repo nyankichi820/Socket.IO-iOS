@@ -18,18 +18,11 @@
     self = [super init];
     if(self){
         self.timestamp = 0;
-        
+        self.readyStatus = SISocketIOTransportStatusClosed;
+        self.parser = [[SISocketIOParser alloc] init];
     }
-    
     return self;
     
-}
-
--(NSString*)query{
-        self.timestamp =[NSDate date].timeIntervalSince1970;
-    NSString *query = [NSString stringWithFormat:@"EIO=2&t=%d-%d&transport=%@",self.timestamp,self.timestamps,self.class.transportName];
-    self.timestamps++;
-    return query;
 }
 
 -(NSString*)endpointURL{
@@ -37,6 +30,18 @@
     NSString *url = [NSString stringWithFormat:@"%@://%@:%d/%@/?%@",[self protocol],[self host],[self port],[self path],[self query]];
     NSLog(url);
     return url;
+}
+
+-(void)close{
+    self.readyStatus = SISocketIOTransportStatusClosed;
+    [self.delegate onClose:self];
+
+}
+
+-(void)onPacket:(id)message{
+    
+    
+    
 }
 
 @end

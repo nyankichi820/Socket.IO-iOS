@@ -6,47 +6,17 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "SISocketIOTransportPolling.m"
-            timestampString = "424316587.966968"
+            timestampString = "424498443.538466"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "25"
-            endingLineNumber = "25"
-            landmarkName = "-connect"
+            startingLineNumber = "56"
+            endingLineNumber = "56"
+            landmarkName = "-open"
             landmarkType = "5">
-            <Locations>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "__37-[SISocketIOTransportPolling connect]_block_invoke"
-                  moduleName = "Socket.IO-iOS"
-                  urlString = "file:///Users/masafumi/Documents/Socket.IO-iOS/SISocketIOTransportPolling.m"
-                  timestampString = "424317057.765059"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "26"
-                  endingLineNumber = "26"
-                  offsetFromSymbolStart = "86">
-               </Location>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "__37-[SISocketIOTransportPolling connect]_block_invoke_2"
-                  moduleName = "Socket.IO-iOS"
-                  urlString = "file:///Users/masafumi/Documents/Socket.IO-iOS/SISocketIOTransportPolling.m"
-                  timestampString = "424317057.76822"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "26"
-                  endingLineNumber = "26"
-                  offsetFromSymbolStart = "80">
-               </Location>
-            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

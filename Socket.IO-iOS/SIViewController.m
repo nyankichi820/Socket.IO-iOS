@@ -19,7 +19,7 @@
     [super viewDidLoad];
     
     self.client = [[SISocketIOClient alloc] initWithHost:@"localhost" onPort:3000];
-    [self.client connect];
+    [self.client open];
 	// Do any additional setup after loading the view, typically from a nib.
 }
 
