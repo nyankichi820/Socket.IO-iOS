@@ -70,7 +70,7 @@
 -(void)parsePacket:(NSData*)data{
     
     
-    unsigned char type[1];
+    UInt8 type[1];
     
     [data getBytes:type length:1];
     
@@ -79,11 +79,12 @@
     [data getBytes:messageBytes range:NSMakeRange(1, data.length -1)];
     
     NSData *message  = [NSData dataWithBytes:messageBytes length:(data.length -1)];
-    
-    NSLog(@"type %c",type[0]);
+    NSLog(@"type %d",type[0]);
     
     NSLog(@"message %@",[[NSString alloc] initWithData:message encoding:NSUTF8StringEncoding]);
-    
+    SISocketIOPacket *packet = [[SISocketIOPacket alloc] init];
+    packet.type = [NSString stringWithFormat:@"%c",type[0]].intValue;
+    [self.delegate onPacket:packet];
     
 }
 

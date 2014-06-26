@@ -7,9 +7,16 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "SISocketIOPacket.h"
+
+
+@protocol SISocketIOParserDelegate <NSObject>
+- (void) onPacket:(SISocketIOPacket*)packet;
+@end
+
 
 @interface SISocketIOParser : NSObject
-
+@property(nonatomic,strong) id<SISocketIOParserDelegate> delegate;
 
 - (void)parseData:(NSData*)message ;
 @end

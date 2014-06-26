@@ -10,7 +10,7 @@
 #import <SocketRocket/SRWebSocket.h>
 
 @interface SISocketIOTransportWebSocket ()
-@property (nonatomic) SRWebSocket *webSocket;
+@property (nonatomic,strong) SRWebSocket *webSocket;
 @end
 
 @implementation SISocketIOTransportWebSocket
