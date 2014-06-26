@@ -10,7 +10,7 @@
 #import "SISocketIOTransport.h"
 
 
-@interface SISocketIOClient : NSObject
+@interface SISocketIOClient : NSObject<SISocketIOTransportDelegate>
 
 @property (nonatomic) NSInteger timestamp;
 @property (nonatomic) NSString *host;
@@ -30,7 +30,12 @@
 - (id) initWithHost:(NSString *)host onPort:(NSInteger)port withParams:(NSDictionary *)params;
 - (id) initWithHost:(NSString *)host onPort:(NSInteger)port withParams:(NSDictionary *)params withPath:(NSString *)path;
 
--(void)connect;
--(void)disconnect;
+
+-(void)emit:(NSString*)eventName data:(NSData*)data;
+
+-(void)emit:(NSString*)eventName params:(NSDictionary*)params;
+
+-(void)open;
+-(void)close;
 
 @end

@@ -10,4 +10,6 @@
 
 @interface SISocketIOParser : NSObject
 
+
+- (void)parseData:(NSData*)message ;
 @end

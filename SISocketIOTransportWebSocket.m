@@ -16,6 +16,8 @@
 @implementation SISocketIOTransportWebSocket
 
 
+
+
 -(NSString*)protocol{
     return self.useSecure ? @"wss" : @"ws";
 }
@@ -25,31 +27,56 @@
 }
 
 
--(void)connect{
+-(NSString*)query{
+    NSString *query  = [NSString stringWithFormat:@"EIO=2&transport=%@&sid=%@",self.class.transportName,self.sid];
+        return query;
+}
+
+
+-(void)open{
+    self.readyStatus = SISocketIOTransportStatusOpening;
+    
     self.webSocket = [[SRWebSocket alloc] initWithURL:[NSURL URLWithString:[self endpointURL]]];
     self.webSocket.delegate = self;
     [self.webSocket open];
 }
 
-- (void)webSocket:(SRWebSocket *)webSocket didReceiveMessage:(id)message{
+-(void)close{
+    if(self.webSocket){
+        [self.webSocket close];
+    }
+    self.readyStatus = SISocketIOTransportStatusClosed;
+    [self.delegate onClose:self];
+}
+
+-(void)emit:(NSString*)eventName params:(NSDictionary*)params{
+    
 
     
 }
 
+- (void)webSocket:(SRWebSocket *)webSocket didReceiveMessage:(id)message{
+    [self onPacket:message];
+}
+
 - (void)webSocketDidOpen:(SRWebSocket *)webSocket{
-    if(self.openedBlocks){
-        self.openedBlocks();
-    }
+    self.readyStatus = SISocketIOTransportStatusOpen;
+    
+    [self.delegate onOpen:self];
 }
+
 - (void)webSocket:(SRWebSocket *)webSocket didFailWithError:(NSError *)error{
-    if(self.failureBlocks){
-        self.failureBlocks(error);
-    }
+    self.readyStatus = SISocketIOTransportStatusClosed;
+    
+    [self.delegate onError:self error:error];
+    
 }
+    
 - (void)webSocket:(SRWebSocket *)webSocket didCloseWithCode:(NSInteger)code reason:(NSString *)reason wasClean:(BOOL)wasClean{
-    if(self.closedBlocks){
-        self.closedBlocks();
-    }
+    self.readyStatus = SISocketIOTransportStatusClosed;
+    [self.delegate onClose:self];
 }
+
+
 
 @end

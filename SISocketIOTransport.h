@@ -7,29 +7,34 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "SISocketIOParser.h"
 
 
 typedef enum SISocketIOTransportStatus : int {
     SISocketIOTransportStatusClosed,
     SISocketIOTransportStatusOpening,
-    SISocketIOTransportStatusOpen
+    SISocketIOTransportStatusOpen,
 } SISocketIOTransportStatus;
 
 
-typedef void (^SISocketIOTransportReceiveEventSuccessBlocks)(NSString *eventName,NSDictionary*message);
-typedef void (^SISocketIOTransportOpenedBlocks)(void);
-typedef void (^SISocketIOTransportClosedBlocks)(void);
-typedef void (^SISocketIOTransportFailureBlocks)(NSError *error);
 
 
 @protocol SISocketIOTransport <NSObject>
 +(NSString*)transportName;
 -(NSString*)protocol;
+-(NSString*)query;
+@end
+
+@protocol SISocketIOTransportDelegate <NSObject>
+- (void) onData:(id)message;
+- (void) onOpen:(id <SISocketIOTransport>)transport;
+- (void) onClose:(id <SISocketIOTransport>)transport;
+- (void) onError:(id <SISocketIOTransport>)transport error:(NSError*)error;
 @end
 
 
 @interface SISocketIOTransport : NSObject<SISocketIOTransport>
-@property (nonatomic) SISocketIOTransportStatus readyState;
+@property (nonatomic) SISocketIOTransportStatus readyStatus;
 @property (nonatomic) NSInteger timestamp;
 @property (nonatomic) NSInteger timestamps;
 @property (nonatomic) NSString *host;
@@ -44,13 +49,17 @@ typedef void (^SISocketIOTransportFailureBlocks)(NSError *error);
 @property (nonatomic) SISocketIOTransport *transport;
 @property (nonatomic) NSArray *transports;
 @property (nonatomic) NSString *timestampParam;
+@property (nonatomic) SISocketIOParser *parser;
+@property (nonatomic,weak) id <SISocketIOTransportDelegate> delegate;
 
-@property (nonatomic,strong) SISocketIOTransportReceiveEventSuccessBlocks receiveEventSuccessBlocks;
-@property (nonatomic,strong) SISocketIOTransportFailureBlocks failureBlocks;
-@property (nonatomic,strong) SISocketIOTransportOpenedBlocks openedBlocks;
-@property (nonatomic,strong) SISocketIOTransportClosedBlocks closedBlocks;
+
 
 -(NSString*)endpointURL;
--(void)connect;
+-(void)emit:(NSString*)eventName data:(NSData*)data;
+-(void)emit:(NSString*)eventName params:(NSDictionary*)params;
 
+-(void)onPacket:(id)message;
+
+-(void)open;
+-(void)close;
 @end
