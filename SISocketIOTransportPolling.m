@@ -21,6 +21,7 @@
         self.timestamp = 0;
         self.readyStatus = SISocketIOTransportStatusClosed;
         self.parser  = [[SISocketIOParser alloc] init];
+        self.parser.delegate = self;
         self.manager = [AFHTTPRequestOperationManager manager];
         self.manager.responseSerializer.acceptableContentTypes = [NSSet setWithObject:@"application/octet-stream"];
     }
@@ -53,10 +54,12 @@
 
 
 -(void)open{
+    [self poll];
     
+}
+
+-(void)poll{
     self.readyStatus = SISocketIOTransportStatusOpening;
-    
-   
     [self.manager GET:[self endpointURL]
       parameters:nil success:^(AFHTTPRequestOperation *operation, id responseObject) {
           NSLog(@"data %@",operation.responseData.description);
@@ -64,25 +67,25 @@
           [self.parser parseData:operation.responseData];
           
           
-          if(!self.sid){
-              for (NSHTTPCookie *cookie in [[NSHTTPCookieStorage sharedHTTPCookieStorage] cookies]){
-                  if([cookie.name isEqualToString:@"io"]){
-                      self.sid = cookie.value;
-                      self.readyStatus = SISocketIOTransportStatusOpen;
-                      [self open];
-                  }
-                  NSLog(@"cookie %@ %@",cookie.name, cookie.value);
-                  
-              }
-          }
-          else{
-              [self.delegate onOpen:self];
-          }
          
       } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
           self.readyStatus = SISocketIOTransportStatusClosed;
           [self.delegate onError:self error:error];
       }];
+    
+    
+}
+
+- (void) onPacket:(SISocketIOPacket*)packet{
+    
+    
+    if(packet.type == SISocketIOPacketTypeOpen){
+        self.sid = [packet.message objectForKey:@"sid"];
+        self.readyStatus = SISocketIOTransportStatusOpen;
+        [self.delegate onOpen:self];
+    }
+    [self.delegate onPacket:self packet:packet];
+    [self poll];
     
     
 }

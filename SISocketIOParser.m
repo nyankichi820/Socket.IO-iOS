@@ -79,11 +79,11 @@
     [data getBytes:messageBytes range:NSMakeRange(1, data.length -1)];
     
     NSData *message  = [NSData dataWithBytes:messageBytes length:(data.length -1)];
-    NSLog(@"type %d",type[0]);
-    
+    NSLog(@"type %c",type[0]);
     NSLog(@"message %@",[[NSString alloc] initWithData:message encoding:NSUTF8StringEncoding]);
     SISocketIOPacket *packet = [[SISocketIOPacket alloc] init];
     packet.type = [NSString stringWithFormat:@"%c",type[0]].intValue;
+    packet.data = message;
     [self.delegate onPacket:packet];
     
 }

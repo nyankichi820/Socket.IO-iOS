@@ -56,7 +56,8 @@
 }
 
 - (void)webSocket:(SRWebSocket *)webSocket didReceiveMessage:(id)message{
-    [self onPacket:message];
+    
+    [self.parser parseData:message];
 }
 
 - (void)webSocketDidOpen:(SRWebSocket *)webSocket{

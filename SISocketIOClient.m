@@ -52,7 +52,60 @@
     
 }
 
+-(void)open{
+    self.transportPolling = (SISocketIOTransportPolling*)[SISocketIOTransportFactory createTransport:@"polling"];
+    self.transportPolling.delegate = self;
+    self.transportPolling.host = self.host;
+    self.transportPolling.port = self.port;
+    self.transportPolling.path = self.path ? self.path : @"socket.io";
+    
+    [self.transportPolling open];
+    
+}
+
+
+#pragma socketiostransportdelegate
+
+- (void) onPacket:(id <SISocketIOTransport>)transport packet:(SISocketIOPacket*)packet{
+    
+    
+    switch (packet.type) {
+        case SISocketIOPacketTypeOpen:
+            [self.delegate socketIOClientOnClose:self];
+            break;
+        case SISocketIOPacketTypeMessage:
+              [self.delegate socketIOClientOnPacket:self packet:packet];
+            break;
+            
+        case SISocketIOPacketTypeClose:
+              [self.delegate socketIOClientOnClose:self];
+            break;
+        case SISocketIOPacketTypePing:
+            
+            break;
+        case SISocketIOPacketTypePong:
+            
+            break;
+        case SISocketIOPacketTypeNoop:
+            
+            break;
+        case SISocketIOPacketTypeUpgrade:
+            
+            break;
+        case SISocketIOPacketTypeError:
+         
+            break;
+            
+        default:
+            break;
+    }
+
+    
+    
+}
+
 -(void)onOpen:(id <SISocketIOTransport>)transport{
+  
     if([transport isEqual:self.transportPolling]){
         self.transportWebSocket = (SISocketIOTransportWebSocket*)[SISocketIOTransportFactory createTransport:@"websocket"];
         self.transportWebSocket.host = self.host;
@@ -71,14 +124,11 @@
     
 }
 
--(void)open{
-    self.transportPolling = (SISocketIOTransportPolling*)[SISocketIOTransportFactory createTransport:@"polling"];
-    self.transportPolling.delegate = self;
-    self.transportPolling.host = self.host;
-    self.transportPolling.port = self.port;
-    self.transportPolling.path = self.path ? self.path : @"socket.io";
-   
-    [self.transportPolling open];
+
+-(void)onError:(id<SISocketIOTransport>)transport error:(NSError *)error{
     
 }
+
+
+
 @end

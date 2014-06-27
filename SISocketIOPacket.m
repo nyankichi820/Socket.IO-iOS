@@ -10,4 +10,17 @@
 
 @implementation SISocketIOPacket
 
+-(NSDictionary*)message{
+    NSError *error;
+    
+    NSDictionary* message = [NSJSONSerialization JSONObjectWithData:self.data options:NSJSONReadingMutableContainers error:&error];
+    
+    if(error){
+        NSLog(@"packet deserialize error %@",error.description);
+        return nil;
+    }
+    
+    return message;
+    
+}
 @end

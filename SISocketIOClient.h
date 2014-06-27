@@ -10,6 +10,9 @@
 #import "SISocketIOTransport.h"
 
 
+@protocol SISocketIOClientDelegate;
+
+
 @interface SISocketIOClient : NSObject<SISocketIOTransportDelegate>
 
 @property (nonatomic) NSInteger timestamp;
@@ -25,7 +28,7 @@
 @property (nonatomic) SISocketIOTransport *transport;
 @property (nonatomic) NSArray *transports;
 @property (nonatomic) NSString *timestampParam;
-
+@property (nonatomic) id<SISocketIOClientDelegate> delegate;
 - (id) initWithHost:(NSString *)host onPort:(NSInteger)port;
 - (id) initWithHost:(NSString *)host onPort:(NSInteger)port withParams:(NSDictionary *)params;
 - (id) initWithHost:(NSString *)host onPort:(NSInteger)port withParams:(NSDictionary *)params withPath:(NSString *)path;
@@ -39,3 +42,12 @@
 -(void)close;
 
 @end
+
+@protocol SISocketIOClientDelegate <NSObject>
+- (void) socketIOClientOnOpen:(SISocketIOClient*)client;
+- (void) socketIOClientOnClose:(SISocketIOClient*)client;
+- (void) socketIOClientOnPacket:(SISocketIOClient*)client packet:(SISocketIOPacket*)packet;
+- (void) socketIOClientOonError:(SISocketIOClient*)client error:(NSError*)error;
+@end
+
+
