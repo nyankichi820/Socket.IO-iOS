@@ -40,6 +40,7 @@ typedef enum SISocketIOClientStatus : int {
 @property (nonatomic) NSArray *upgrades;
 @property (nonatomic) NSString *timestampParam;
 @property (nonatomic) id<SISocketIOClientDelegate> delegate;
+
 - (id) initWithHost:(NSString *)host onPort:(NSInteger)port;
 - (id) initWithHost:(NSString *)host onPort:(NSInteger)port withParams:(NSDictionary *)params;
 - (id) initWithHost:(NSString *)host onPort:(NSInteger)port withParams:(NSDictionary *)params withPath:(NSString *)path;

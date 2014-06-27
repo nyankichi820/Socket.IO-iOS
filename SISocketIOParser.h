@@ -18,5 +18,5 @@
 @interface SISocketIOParser : NSObject
 @property(nonatomic,strong) id<SISocketIOParserDelegate> delegate;
 
-- (void)parseData:(NSData*)message ;
+- (void)parseData:(id)message;
 @end

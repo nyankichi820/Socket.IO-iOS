@@ -58,6 +58,29 @@
     
 }
 
+-(void)write:(NSArray*)packets{
+    
+    
+    
+}
+
+
+-(void)doWrite:(NSData*)data{
+    
+    [self.manager POST:[self endpointURL]
+           parameters:nil success:^(AFHTTPRequestOperation *operation, id responseObject) {
+               NSLog(@"data %@",operation.responseData.description);
+               
+               [self.parser parseData:operation.responseData];
+               
+               
+               
+           } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+               self.readyStatus = SISocketIOTransportStatusClosed;
+               [self.delegate onError:self error:error];
+           }];
+}
+
 -(void)poll{
     self.readyStatus = SISocketIOTransportStatusOpening;
     [self.manager GET:[self endpointURL]

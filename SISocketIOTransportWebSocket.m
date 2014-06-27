@@ -30,7 +30,7 @@
 -(NSString*)query{
     NSString *query;
     
-    if(!self.sid){
+    if(self.sid){
         query = [NSString stringWithFormat:@"EIO=2&transport=%@&sid=%@",self.class.transportName,self.sid];
     }
     else{

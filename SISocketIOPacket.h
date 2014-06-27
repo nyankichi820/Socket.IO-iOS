@@ -24,7 +24,6 @@ typedef enum SISocketIOPacketType : int {
 @interface SISocketIOPacket : NSObject
 @property (nonatomic) SISocketIOPacketType type;
 @property (nonatomic,strong) NSData *data;
-
 -(NSDictionary*)message;
 
 @end

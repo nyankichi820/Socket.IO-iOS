@@ -40,6 +40,7 @@ typedef enum SISocketIOTransportStatus : int {
 @property (nonatomic) BOOL onlyBinaryUpgrades;
 @property (nonatomic) BOOL forceJSONP;
 @property (nonatomic) BOOL forceBase64;
+@property (nonatomic) BOOL writable;
 @property (nonatomic) SISocketIOTransport *transport;
 @property (nonatomic) NSArray *transports;
 @property (nonatomic) NSString *timestampParam;
@@ -53,9 +54,10 @@ typedef enum SISocketIOTransportStatus : int {
 -(void)emit:(NSString*)eventName params:(NSDictionary*)params;
 
 
-
+-(void)write:(NSArray*)packets;
 -(void)open;
 -(void)close;
+
 @end
 
 @protocol SISocketIOTransportDelegate <NSObject>

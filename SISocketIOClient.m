@@ -67,7 +67,7 @@
 
 -(void)open{
     NSString *transport;
-    if (!self.rememberUpgrade && [self.transports containsObject:@"websocket"]) {
+    if (self.rememberUpgrade && [self.transports containsObject:@"websocket"]) {
         transport = @"websocket";
     } else {
         transport = [self.transports firstObject];

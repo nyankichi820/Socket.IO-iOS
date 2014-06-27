@@ -10,8 +10,9 @@
 
 @implementation SISocketIOParser
 
-- (void)parsePayload:(NSData*)message{
-    NSLog([[NSString alloc] initWithData:message encoding:NSUTF8StringEncoding]);
+- (void)parsePayloadBinary:(NSData*)message{
+    NSLog(message);
+    //NSLog([[NSString alloc] initWithData:message encoding:NSUTF8StringEncoding]);
     
     NSMutableArray *buffers = [NSMutableArray array];
     
@@ -55,19 +56,84 @@
  
     for(NSData *buffer in buffers){
         //NSLog(@"message: %@",[[NSString alloc] initWithData:buffer encoding:NSUTF8StringEncoding]);
-        [self parsePacket:buffer];
+        [self parsePacketBinary:buffer];
     }
 }
 
 
-- (void)parseData:(NSData*)message{
-    
-    [self parsePayload:message];
-    
+- (void)parseData:(id)message{
+
+    if([message isKindOfClass:[NSData class]]){
+        [self parsePayloadBinary:message];
+    }
+    else if([message isKindOfClass:[NSString class]]){
+        [self parsePacket:message];
+    }
+    else{
+        NSAssert(NO,@"unknown packet");
+    }
     
 }
 
--(void)parsePacket:(NSData*)data{
+
+- (void)encodeData:(NSDictionary*   )message{
+  
+    [self encodeBinary:message];
+}
+
+- (void)encodeBinary:(id)message{
+    NSLog(message);
+    //NSLog([[NSString alloc] initWithData:message encoding:NSUTF8StringEncoding]);
+    
+    NSMutableArray *buffers = [NSMutableArray array];
+    
+    NSData *bufferTail = [NSData dataWithData:message];
+    
+    
+    while(bufferTail.length > 0){
+        const uint8_t *fileBytes = (const uint8_t*)[bufferTail bytes];
+        
+        NSUInteger length = [message length];
+        
+        NSData *buffer;
+        NSMutableString *strLength = [NSMutableString stringWithCapacity: 0];
+        
+        BOOL isString = (fileBytes[0] == 0) ;
+        
+        NSLog(@"%d",fileBytes[0]);
+        for(int i = 1;i < length  ; i++){
+            UInt8 ui= fileBytes[i];
+            if (ui == 255) {
+                break;
+            }
+            [strLength appendString:[NSNumber numberWithUnsignedInt:ui].stringValue];
+        }
+        
+        NSLog(@"str length %d",strLength.intValue);
+        
+        unsigned char aBuffer[strLength.intValue];
+        [bufferTail getBytes:aBuffer range:NSMakeRange(2 + strLength.length,strLength.intValue)];
+        buffer = [NSData dataWithBytes:aBuffer length:strLength.intValue];
+        [buffers addObject:buffer];
+        int nextLength = length -  strLength.intValue - 2 - strLength.length;
+        NSLog(@"next buffer %d",nextLength);
+        unsigned char nextBuffer[nextLength];
+        
+        [bufferTail getBytes:nextBuffer range:NSMakeRange(2 + strLength.length + strLength.intValue,nextLength)];
+        
+        bufferTail = [NSData dataWithBytes:nextBuffer length:nextLength];
+        
+    }
+    
+    for(NSData *buffer in buffers){
+        //NSLog(@"message: %@",[[NSString alloc] initWithData:buffer encoding:NSUTF8StringEncoding]);
+        [self parsePacketBinary:buffer];
+    }
+}
+
+
+
+-(void)parsePacketBinary:(NSData*)data{
     
     
     UInt8 type[1];
@@ -84,6 +150,18 @@
     SISocketIOPacket *packet = [[SISocketIOPacket alloc] init];
     packet.type = [NSString stringWithFormat:@"%c",type[0]].intValue;
     packet.data = message;
+    [self.delegate onPacket:packet];
+    
+}
+
+-(void)parsePacket:(NSString*)message{
+    
+    
+    NSLog(@"type %c",[message characterAtIndex:0]);
+    NSLog(@"message %@",[message substringFromIndex:1]);
+    SISocketIOPacket *packet = [[SISocketIOPacket alloc] init];
+    packet.type = [NSString stringWithFormat:@"%c",[message characterAtIndex:0]].intValue;
+    packet.data = [[message substringFromIndex:1] dataUsingEncoding:NSUTF8StringEncoding];
     [self.delegate onPacket:packet];
     
 }
