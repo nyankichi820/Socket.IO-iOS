@@ -17,11 +17,24 @@
 @implementation SISocketIOClient
 
 
+- (id) init{
+    self = [super init];
+    if(self){
+        self.transports = @[@"polling",@"websocket"];
+        self.readyStatus = SISocketIOClientStatusClosed;
+        
+    }
+    
+    return self;
+    
+}
+
 - (id) initWithHost:(NSString *)host onPort:(NSInteger)port{
     self = [self init];
     if(self){
         self.host = host;
         self.port = port;
+        
         
     }
     
@@ -53,7 +66,15 @@
 }
 
 -(void)open{
-    self.transportPolling = (SISocketIOTransportPolling*)[SISocketIOTransportFactory createTransport:@"polling"];
+    NSString *transport;
+    if (!self.rememberUpgrade && [self.transports containsObject:@"websocket"]) {
+        transport = @"websocket";
+    } else {
+        transport = [self.transports firstObject];
+    }
+    self.readyStatus = SISocketIOClientStatusOpening;
+    
+    self.transportPolling = (SISocketIOTransportPolling*)[SISocketIOTransportFactory createTransport:transport];
     self.transportPolling.delegate = self;
     self.transportPolling.host = self.host;
     self.transportPolling.port = self.port;
@@ -66,12 +87,12 @@
 
 #pragma socketiostransportdelegate
 
-- (void) onPacket:(id <SISocketIOTransport>)transport packet:(SISocketIOPacket*)packet{
+- (void) onPacket:(SISocketIOTransport*)transport packet:(SISocketIOPacket*)packet{
     
     
     switch (packet.type) {
         case SISocketIOPacketTypeOpen:
-            [self.delegate socketIOClientOnClose:self];
+            [self onHandshake:transport packet:packet];
             break;
         case SISocketIOPacketTypeMessage:
               [self.delegate socketIOClientOnPacket:self packet:packet];
@@ -104,7 +125,45 @@
     
 }
 
--(void)onOpen:(id <SISocketIOTransport>)transport{
+-(NSArray*)filterUpgrades:(NSArray*)upgrades{
+    NSMutableArray *filtered = [NSMutableArray array];
+    
+    for(NSString *transportName in upgrades){
+        if([self.transports containsObject:transportName]){
+            [filtered addObject:transportName];
+        }
+    }
+    return filtered;
+}
+
+-(void)onHandshake:(SISocketIOTransport*)transport packet:(SISocketIOPacket*)packet{
+    
+    if(packet.type == SISocketIOPacketTypeOpen){
+        self.sid =[packet.message objectForKey:@"sid"];
+        self.upgrades = [self filterUpgrades:[packet.message objectForKey:@"upgrades"]];
+        self.pingInterval =[[packet.message objectForKey:@"pingInterval"] integerValue];
+        self.pingTimeout = [[packet.message objectForKey:@"pingTimeout"] integerValue];
+        transport.sid = self.sid;
+        
+        [self onOpen:transport];
+    }
+    
+    
+}
+
+-(void)setPing{
+    
+    
+}
+
+
+-(void)ping{
+    
+    
+    
+}
+
+-(void)onOpen:(SISocketIOTransport*)transport{
   
     if([transport isEqual:self.transportPolling]){
         self.transportWebSocket = (SISocketIOTransportWebSocket*)[SISocketIOTransportFactory createTransport:@"websocket"];
@@ -120,12 +179,12 @@
     }
 }
 
--(void)onClose:(id <SISocketIOTransport>)transport{
+-(void)onClose:(SISocketIOTransport*)transport{
     
 }
 
 
--(void)onError:(id<SISocketIOTransport>)transport error:(NSError *)error{
+-(void)onError:(SISocketIOTransport*)transport error:(NSError *)error{
     
 }
 

@@ -10,11 +10,20 @@
 #import "SISocketIOTransport.h"
 
 
+
+typedef enum SISocketIOClientStatus : int {
+    SISocketIOClientStatusClosed,
+    SISocketIOClientStatusOpening,
+    SISocketIOClientStatusOpen,
+} SISocketIOClientStatus;
+
 @protocol SISocketIOClientDelegate;
 
 
 @interface SISocketIOClient : NSObject<SISocketIOTransportDelegate>
-
+@property (nonatomic) SISocketIOClientStatus readyStatus;
+@property (nonatomic) NSInteger pingInterval;
+@property (nonatomic) NSInteger pingTimeout;
 @property (nonatomic) NSInteger timestamp;
 @property (nonatomic) NSString *host;
 @property (nonatomic) NSInteger port;
@@ -25,8 +34,10 @@
 @property (nonatomic) BOOL onlyBinaryUpgrades;
 @property (nonatomic) BOOL forceJSONP;
 @property (nonatomic) BOOL forceBase64;
+@property (nonatomic) BOOL rememberUpgrade;
 @property (nonatomic) SISocketIOTransport *transport;
 @property (nonatomic) NSArray *transports;
+@property (nonatomic) NSArray *upgrades;
 @property (nonatomic) NSString *timestampParam;
 @property (nonatomic) id<SISocketIOClientDelegate> delegate;
 - (id) initWithHost:(NSString *)host onPort:(NSInteger)port;

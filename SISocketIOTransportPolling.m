@@ -78,12 +78,7 @@
 
 - (void) onPacket:(SISocketIOPacket*)packet{
     
-    
-    if(packet.type == SISocketIOPacketTypeOpen){
-        self.sid = [packet.message objectForKey:@"sid"];
-        self.readyStatus = SISocketIOTransportStatusOpen;
-        [self.delegate onOpen:self];
-    }
+  
     [self.delegate onPacket:self packet:packet];
     [self poll];
     

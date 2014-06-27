@@ -25,13 +25,7 @@ typedef enum SISocketIOTransportStatus : int {
 -(NSString*)query;
 @end
 
-@protocol SISocketIOTransportDelegate <NSObject>
-- (void) onPacket:(id <SISocketIOTransport>)transport packet:(SISocketIOPacket*)packet;
-- (void) onOpen:(id <SISocketIOTransport>)transport;
-- (void) onClose:(id <SISocketIOTransport>)transport;
-- (void) onError:(id <SISocketIOTransport>)transport error:(NSError*)error;
-@end
-
+@protocol SISocketIOTransportDelegate;
 
 @interface SISocketIOTransport : NSObject<SISocketIOTransport,SISocketIOParserDelegate>
 @property (nonatomic) SISocketIOTransportStatus readyStatus;
@@ -63,3 +57,11 @@ typedef enum SISocketIOTransportStatus : int {
 -(void)open;
 -(void)close;
 @end
+
+@protocol SISocketIOTransportDelegate <NSObject>
+- (void) onPacket:(SISocketIOTransport*)transport packet:(SISocketIOPacket*)packet;
+- (void) onOpen:(SISocketIOTransport*)transport;
+- (void) onClose:(SISocketIOTransport*)transport;
+- (void) onError:(SISocketIOTransport*)transport error:(NSError*)error;
+@end
+
