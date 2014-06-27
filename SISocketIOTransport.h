@@ -23,6 +23,7 @@ typedef enum SISocketIOTransportStatus : int {
 +(NSString*)transportName;
 -(NSString*)protocol;
 -(NSString*)query;
+-(void)write:(NSArray*)packets;
 @end
 
 @protocol SISocketIOTransportDelegate;
@@ -54,7 +55,7 @@ typedef enum SISocketIOTransportStatus : int {
 -(void)emit:(NSString*)eventName params:(NSDictionary*)params;
 
 
--(void)write:(NSArray*)packets;
+-(void)send:(NSArray*)data;
 -(void)open;
 -(void)close;
 

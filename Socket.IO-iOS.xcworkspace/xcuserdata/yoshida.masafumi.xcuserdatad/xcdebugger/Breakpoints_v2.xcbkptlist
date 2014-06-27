@@ -106,19 +106,19 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "SISocketIOParser.m"
-            timestampString = "425469705.952212"
+            timestampString = "425537119.387278"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "57"
-            endingLineNumber = "57"
-            landmarkName = "-parsePayload:"
+            startingLineNumber = "56"
+            endingLineNumber = "56"
+            landmarkName = "-parsePayloadBinary:"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "SISocketIOTransportWebSocket.m"
@@ -182,7 +182,7 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "SISocketIOTransportWebSocket.m"
@@ -201,13 +201,13 @@
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "SISocketIOParser.m"
-            timestampString = "425472212.197954"
+            filePath = "SISocketIOClient.m"
+            timestampString = "425543389.382205"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "87"
-            endingLineNumber = "87"
-            landmarkName = "-parsePacket:"
+            startingLineNumber = "93"
+            endingLineNumber = "93"
+            landmarkName = "-open"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -217,13 +217,29 @@
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "SISocketIOClient.m"
-            timestampString = "425528696.458012"
+            filePath = "SISocketIOParser.m"
+            timestampString = "425537119.387278"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "75"
-            endingLineNumber = "75"
-            landmarkName = "-open"
+            startingLineNumber = "64"
+            endingLineNumber = "64"
+            landmarkName = "-parseData:"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "SISocketIOParser.m"
+            timestampString = "425543344.823954"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "91"
+            endingLineNumber = "91"
+            landmarkName = "-encodePayloadBinary:"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>

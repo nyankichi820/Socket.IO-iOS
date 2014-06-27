@@ -22,7 +22,7 @@
     if(self){
         self.transports = @[@"polling",@"websocket"];
         self.readyStatus = SISocketIOClientStatusClosed;
-        
+        self.writeBuffer = [NSMutableArray array];
     }
     
     return self;
@@ -60,8 +60,26 @@
 }
 
 
--(void)emit:(NSString*)eventName params:(NSDictionary*)params{
+-(void)send:(NSData*)data{
+    [self sendPacket:SISocketIOPacketTypeMessage data:data];
     
+}
+
+-(void)sendPacket:(SISocketIOPacketType)type data:(NSData*)data{
+    SISocketIOPacket *packet =[[SISocketIOPacket alloc] init];
+    packet.type = type;
+    packet.data = data;
+    [self.writeBuffer addObject:packet];
+}
+
+
+-(void)flush{
+    if(self.readyStatus != SISocketIOClientStatusClosed && self.transport.writable
+       &&  !self.upgrading && self.writeBuffer.count > 0){
+        [self.transport send:self.writeBuffer];
+        self.prevBufferLen = self.writeBuffer.count;
+    
+    }
     
 }
 
@@ -164,7 +182,9 @@
 }
 
 -(void)onOpen:(SISocketIOTransport*)transport{
-  
+    [self.delegate socketIOClientOnOpen:self];
+    
+    /*
     if([transport isEqual:self.transportPolling]){
         self.transportWebSocket = (SISocketIOTransportWebSocket*)[SISocketIOTransportFactory createTransport:@"websocket"];
         self.transportWebSocket.host = self.host;
@@ -177,6 +197,8 @@
     else{
         
     }
+     
+     */
 }
 
 -(void)onClose:(SISocketIOTransport*)transport{

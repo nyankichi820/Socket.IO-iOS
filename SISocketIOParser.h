@@ -19,4 +19,5 @@
 @property(nonatomic,strong) id<SISocketIOParserDelegate> delegate;
 
 - (void)parseData:(id)message;
+- (void)encodePayload:(NSArray*)packets;
 @end

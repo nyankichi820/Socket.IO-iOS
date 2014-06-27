@@ -33,6 +33,14 @@
     return url;
 }
 
+
+-(void)send:(NSArray*)packets{
+    if(self.readyStatus == SISocketIOTransportStatusOpen){
+        [self write:packets];
+    }
+    
+}
+
 -(void)close{
     self.readyStatus = SISocketIOTransportStatusClosed;
     [self.delegate onClose:self];

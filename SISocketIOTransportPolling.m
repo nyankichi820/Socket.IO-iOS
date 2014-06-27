@@ -59,6 +59,7 @@
 }
 
 -(void)write:(NSArray*)packets{
+    self.writable = NO;
     
     
     
