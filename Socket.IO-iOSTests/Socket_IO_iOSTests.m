@@ -31,8 +31,8 @@
 {
     SISocketIOPacket *packet = [[SISocketIOPacket alloc] init];
     
-    packet.type = SISocketIOPacketTypeMessage;
-    packet.data = [@"hogehoge" dataUsingEncoding:NSUTF8StringEncoding];
+    packet.type = SISocketIOPacketTypeOpen;
+    packet.data = [@"{\"sid\":\"ovKLLn-wzqb85FGSAAAN\",\"upgrades\":[],\"pingInterval\":25000,\"pingTimeout\":60000}" dataUsingEncoding:NSUTF8StringEncoding];
     
     SISocketIOParser *parser = [[SISocketIOParser alloc] init];
     
@@ -47,8 +47,8 @@
 {
     SISocketIOPacket *packet = [[SISocketIOPacket alloc] init];
     
-    packet.type = SISocketIOPacketTypeMessage;
-    packet.data = [@"hogehoge" dataUsingEncoding:NSUTF8StringEncoding];
+    packet.type = SISocketIOPacketTypeOpen;
+    packet.data = [@"{\"sid\":\"ovKLLn-wzqb85FGSAAAN\",\"upgrades\":[],\"pingInterval\":25000,\"pingTimeout\":60000}" dataUsingEncoding:NSUTF8StringEncoding];
     
     SISocketIOParser *parser = [[SISocketIOParser alloc] init];
     

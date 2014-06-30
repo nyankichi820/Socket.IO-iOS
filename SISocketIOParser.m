@@ -11,7 +11,7 @@
 @implementation SISocketIOParser
 
 - (void)parsePayloadBinary:(NSData*)message  completion:(void (^)(SISocketIOPacket*))completion{
-    NSLog([[NSString alloc] initWithData:message encoding:NSUTF8StringEncoding]);
+    NSLog([message description]);
     NSMutableArray *buffers = [NSMutableArray array];
     
     NSData *bufferTail = [NSData dataWithData:message];
@@ -90,10 +90,11 @@
     
     int bufferIndex = 0;
     for(NSData *data in encodePackets){
-        resultArray[bufferIndex++] = 1;
+        resultArray[bufferIndex++] = (unsigned int)0;
         NSString *strLength = [NSString stringWithFormat:@"%d",data.length ];
         for(int i = 0 ;i< strLength.length;i++){
-            resultArray[bufferIndex++] = (unsigned int)[strLength characterAtIndex:i];
+            uint8_t charI= (uint8_t)[strLength substringWithRange:NSMakeRange(i,1)].integerValue ;
+            resultArray[bufferIndex++] = charI;
         }
         resultArray[bufferIndex++]  = 255;
         const uint8_t *bytes = (const uint8_t*)[data bytes];

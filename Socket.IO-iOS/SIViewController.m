@@ -27,7 +27,7 @@
 
 -(void)socketIOClientOnOpen:(SISocketIOClient *)client{
     
-    [client send:[@"{\"message\":\"hoge\"}" dataUsingEncoding:NSUTF8StringEncoding]];
+    [client send:[@"[\"chat message\",\"dsfsdfd\"]" dataUsingEncoding:NSUTF8StringEncoding]];
     
 }
 

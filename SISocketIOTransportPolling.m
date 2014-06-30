@@ -68,11 +68,10 @@
 
 
 -(void)doWrite:(NSData*)data{
+    return;
+    NSError *error;
+    NSMutableURLRequest *request = [self.manager.requestSerializer requestWithMethod:@"POST" URLString:[self endpointURL] parameters:nil error:&error];
     
-    NSMutableURLRequest *request = [[NSMutableURLRequest alloc] initWithURL:[NSURL URLWithString: [self endpointURL]]];
-    
-    [request setHTTPShouldHandleCookies:TRUE];
-    [request setHTTPMethod:@"POST"];
     [ request setValue:@"application/octet-stream" forHTTPHeaderField:@"content-type"];
     
     //POST body
@@ -84,15 +83,13 @@
     AFHTTPRequestOperation *operation = [self.manager HTTPRequestOperationWithRequest:request
                                           success:^(AFHTTPRequestOperation *operation, id responseObject) {
         NSLog(@"data %@",operation.responseData.description);
-        
         [self.parser parseData:operation.responseData completion:^(SISocketIOPacket *packet) {
             
         }];
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
-        self.readyStatus = SISocketIOTransportStatusClosed;
-        [self.delegate onError:self error:error];
+   
     }];
-    [operation start];
+    [[self.manager operationQueue] addOperation:operation];
  
 }
 
