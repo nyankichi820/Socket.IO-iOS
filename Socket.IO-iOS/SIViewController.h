@@ -7,7 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-
-@interface SIViewController : UIViewController
+@protocol SISocketIOClientDelegate;
+@interface SIViewController : UIViewController<SISocketIOClientDelegate>
 
 @end

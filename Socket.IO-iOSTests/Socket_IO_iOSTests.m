@@ -7,7 +7,8 @@
 //
 
 #import <XCTest/XCTest.h>
-
+#import "SISocketIOPacket.h"
+#import "SISocketIOParser.h"
 @interface Socket_IO_iOSTests : XCTestCase
 
 @end
@@ -26,9 +27,40 @@
     [super tearDown];
 }
 
-- (void)testExample
+- (void)testPayload
 {
-    XCTFail(@"No implementation for \"%s\"", __PRETTY_FUNCTION__);
+    SISocketIOPacket *packet = [[SISocketIOPacket alloc] init];
+    
+    packet.type = SISocketIOPacketTypeMessage;
+    packet.data = [@"hogehoge" dataUsingEncoding:NSUTF8StringEncoding];
+    
+    SISocketIOParser *parser = [[SISocketIOParser alloc] init];
+    
+    NSData *data = [parser encodePayloadBinary:packet];
+    
+   SISocketIOPacket *packet2 =  [parser parsePacketBinary:data];
+   XCTAssertTrue(packet.type == packet2.type, @"type");
+    XCTAssertTrue([packet.data isEqual:packet2.data], @"data");
+}
+
+- (void)testEncodeDecode
+{
+    SISocketIOPacket *packet = [[SISocketIOPacket alloc] init];
+    
+    packet.type = SISocketIOPacketTypeMessage;
+    packet.data = [@"hogehoge" dataUsingEncoding:NSUTF8StringEncoding];
+    
+    SISocketIOParser *parser = [[SISocketIOParser alloc] init];
+    
+    [parser encodePayloads:@[packet] completion:^(NSData *data) {
+        [parser parseData:data completion:^(SISocketIOPacket *packet2) {
+            
+        }];
+        
+        
+    }];
+    
+  
 }
 
 @end

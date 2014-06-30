@@ -21,9 +21,8 @@
         self.timestamp = 0;
         self.readyStatus = SISocketIOTransportStatusClosed;
         self.parser  = [[SISocketIOParser alloc] init];
-        self.parser.delegate = self;
         self.manager = [AFHTTPRequestOperationManager manager];
-        self.manager.responseSerializer.acceptableContentTypes = [NSSet setWithObject:@"application/octet-stream"];
+        self.manager.responseSerializer.acceptableContentTypes = [NSSet setWithObjects:@"application/octet-stream",@"text/html",nil];
     }
     return self;
     
@@ -60,7 +59,9 @@
 
 -(void)write:(NSArray*)packets{
     self.writable = NO;
-    
+    [self.parser encodePayloads:packets completion:^(NSData *data) {
+        [self doWrite:data];
+    }];
     
     
 }
@@ -68,18 +69,31 @@
 
 -(void)doWrite:(NSData*)data{
     
-    [self.manager POST:[self endpointURL]
-           parameters:nil success:^(AFHTTPRequestOperation *operation, id responseObject) {
-               NSLog(@"data %@",operation.responseData.description);
-               
-               [self.parser parseData:operation.responseData];
-               
-               
-               
-           } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
-               self.readyStatus = SISocketIOTransportStatusClosed;
-               [self.delegate onError:self error:error];
-           }];
+    NSMutableURLRequest *request = [[NSMutableURLRequest alloc] initWithURL:[NSURL URLWithString: [self endpointURL]]];
+    
+    [request setHTTPShouldHandleCookies:TRUE];
+    [request setHTTPMethod:@"POST"];
+    [ request setValue:@"application/octet-stream" forHTTPHeaderField:@"content-type"];
+    
+    //POST body
+    NSMutableData *postbody = [NSMutableData data];
+    [postbody appendData:data];
+ 
+    [request setHTTPBody:postbody];
+    
+    AFHTTPRequestOperation *operation = [self.manager HTTPRequestOperationWithRequest:request
+                                          success:^(AFHTTPRequestOperation *operation, id responseObject) {
+        NSLog(@"data %@",operation.responseData.description);
+        
+        [self.parser parseData:operation.responseData completion:^(SISocketIOPacket *packet) {
+            
+        }];
+    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+        self.readyStatus = SISocketIOTransportStatusClosed;
+        [self.delegate onError:self error:error];
+    }];
+    [operation start];
+ 
 }
 
 -(void)poll{
@@ -88,7 +102,9 @@
       parameters:nil success:^(AFHTTPRequestOperation *operation, id responseObject) {
           NSLog(@"data %@",operation.responseData.description);
           
-          [self.parser parseData:operation.responseData];
+          [self.parser parseData:operation.responseData completion:^(SISocketIOPacket *packet) {
+                   [self onPacket:packet];
+          }];
           
           
          
@@ -101,8 +117,6 @@
 }
 
 - (void) onPacket:(SISocketIOPacket*)packet{
-    
-  
     [self.delegate onPacket:self packet:packet];
     [self poll];
     

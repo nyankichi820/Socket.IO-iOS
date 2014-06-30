@@ -10,8 +10,6 @@
 #import "SISocketIOTransportFactory.h"
 
 @interface SISocketIOClient ()
-@property (nonatomic,strong) SISocketIOTransportPolling *transportPolling;
-@property (nonatomic,strong) SISocketIOTransportWebSocket *transportWebSocket;
 @end
 
 @implementation SISocketIOClient
@@ -70,6 +68,7 @@
     packet.type = type;
     packet.data = data;
     [self.writeBuffer addObject:packet];
+    [self flush];
 }
 
 
@@ -79,6 +78,10 @@
         [self.transport send:self.writeBuffer];
         self.prevBufferLen = self.writeBuffer.count;
     
+    }
+    else{
+        [self.transport send:self.writeBuffer];
+        self.prevBufferLen = self.writeBuffer.count;
     }
     
 }
@@ -92,13 +95,13 @@
     }
     self.readyStatus = SISocketIOClientStatusOpening;
     
-    self.transportPolling = (SISocketIOTransportPolling*)[SISocketIOTransportFactory createTransport:transport];
-    self.transportPolling.delegate = self;
-    self.transportPolling.host = self.host;
-    self.transportPolling.port = self.port;
-    self.transportPolling.path = self.path ? self.path : @"socket.io";
+    self.transport = (SISocketIOTransportPolling*)[SISocketIOTransportFactory createTransport:transport];
+    self.transport.delegate = self;
+    self.transport.host = self.host;
+    self.transport.port = self.port;
+    self.transport.path = self.path ? self.path : @"socket.io";
     
-    [self.transportPolling open];
+    [self.transport open];
     
 }
 
@@ -182,6 +185,7 @@
 }
 
 -(void)onOpen:(SISocketIOTransport*)transport{
+    self.transport.readyStatus = SISocketIOTransportStatusOpen;
     [self.delegate socketIOClientOnOpen:self];
     
     /*

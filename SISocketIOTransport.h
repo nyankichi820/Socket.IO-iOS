@@ -28,7 +28,7 @@ typedef enum SISocketIOTransportStatus : int {
 
 @protocol SISocketIOTransportDelegate;
 
-@interface SISocketIOTransport : NSObject<SISocketIOTransport,SISocketIOParserDelegate>
+@interface SISocketIOTransport : NSObject<SISocketIOTransport>
 @property (nonatomic) SISocketIOTransportStatus readyStatus;
 @property (nonatomic) NSInteger timestamp;
 @property (nonatomic) NSInteger timestamps;

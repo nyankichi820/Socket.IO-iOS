@@ -9,7 +9,7 @@
 #import <Foundation/Foundation.h>
 
 
-typedef enum SISocketIOPacketType : int {
+typedef enum SISocketIOPacketType : NSInteger {
     SISocketIOPacketTypeOpen,
     SISocketIOPacketTypeClose,
     SISocketIOPacketTypePing,

@@ -10,14 +10,11 @@
 #import "SISocketIOPacket.h"
 
 
-@protocol SISocketIOParserDelegate <NSObject>
-- (void) onPacket:(SISocketIOPacket*)packet;
-@end
-
 
 @interface SISocketIOParser : NSObject
-@property(nonatomic,strong) id<SISocketIOParserDelegate> delegate;
 
-- (void)parseData:(id)message;
-- (void)encodePayload:(NSArray*)packets;
+- (void)parseData:(id)message completion:(void (^)(SISocketIOPacket*))completion;
+- (void)encodePayloads:(NSArray*)packets completion:(void (^)(NSData*))complete;
+-(SISocketIOPacket *)parsePacketBinary:(NSData*)data;
+- (NSData*)encodePayloadBinary:(SISocketIOPacket*)packet;
 @end

@@ -20,7 +20,6 @@
         self.timestamp = 0;
         self.readyStatus = SISocketIOTransportStatusClosed;
         self.parser = [[SISocketIOParser alloc] init];
-        self.parser.delegate = self;
     }
     return self;
     

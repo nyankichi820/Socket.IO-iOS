@@ -19,13 +19,34 @@
     [super viewDidLoad];
     
     self.client = [[SISocketIOClient alloc] initWithHost:@"localhost" onPort:3000];
-    self.client.delegate;
+    self.client.delegate = self;
     [self.client open];
 	// Do any additional setup after loading the view, typically from a nib.
 }
 
 
+-(void)socketIOClientOnOpen:(SISocketIOClient *)client{
+    
+    [client send:[@"{\"message\":\"hoge\"}" dataUsingEncoding:NSUTF8StringEncoding]];
+    
+}
 
+
+-(void)socketIOClientOnClose:(SISocketIOClient *)client{
+    
+}
+
+
+-(void)socketIOClientOnPacket:(SISocketIOClient *)client packet:(SISocketIOPacket *)packet{
+    
+    
+}
+
+
+-(void)socketIOClientOnError:(SISocketIOClient *)client error:(NSError *)error{
+    
+    
+}
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];

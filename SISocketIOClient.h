@@ -62,7 +62,7 @@ typedef enum SISocketIOClientStatus : int {
 - (void) socketIOClientOnOpen:(SISocketIOClient*)client;
 - (void) socketIOClientOnClose:(SISocketIOClient*)client;
 - (void) socketIOClientOnPacket:(SISocketIOClient*)client packet:(SISocketIOPacket*)packet;
-- (void) socketIOClientOonError:(SISocketIOClient*)client error:(NSError*)error;
+- (void) socketIOClientOnError:(SISocketIOClient*)client error:(NSError*)error;
 @end
 
 
