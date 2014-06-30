@@ -47,14 +47,15 @@
 {
     SISocketIOPacket *packet = [[SISocketIOPacket alloc] init];
     
-    packet.type = SISocketIOPacketTypeOpen;
+    packet.type = SISocketIOPacketTypeMessage;
     packet.data = [@"{\"sid\":\"ovKLLn-wzqb85FGSAAAN\",\"upgrades\":[],\"pingInterval\":25000,\"pingTimeout\":60000}" dataUsingEncoding:NSUTF8StringEncoding];
     
     SISocketIOParser *parser = [[SISocketIOParser alloc] init];
     
     [parser encodePayloads:@[packet] completion:^(NSData *data) {
         [parser parseData:data completion:^(SISocketIOPacket *packet2) {
-            
+            XCTAssertTrue(packet.type == packet2.type, @"type");
+            XCTAssertTrue([packet.data isEqual:packet2.data], @"data");
         }];
         
         

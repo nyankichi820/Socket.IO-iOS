@@ -47,6 +47,7 @@
         query = [NSString stringWithFormat:@"EIO=2&t=%d-%d&transport=%@&sid=%@",self.timestamp,self.timestamps,self.class.transportName,self.sid];
         
     }
+
     self.timestamps++;
     return query;
 }
@@ -68,16 +69,16 @@
 
 
 -(void)doWrite:(NSData*)data{
-    return;
     NSError *error;
-    NSMutableURLRequest *request = [self.manager.requestSerializer requestWithMethod:@"POST" URLString:[self endpointURL] parameters:nil error:&error];
+    NSString *url = [self endpointURL] ;
+    NSLog(@"post url %@",url);
+    NSMutableURLRequest *request = [self.manager.requestSerializer requestWithMethod:@"POST" URLString:url parameters:nil error:&error];
     
-    [ request setValue:@"application/octet-stream" forHTTPHeaderField:@"content-type"];
+    [ request setValue:@"application/octet-stream" forHTTPHeaderField:@"Content-Type"];
     
     //POST body
     NSMutableData *postbody = [NSMutableData data];
     [postbody appendData:data];
- 
     [request setHTTPBody:postbody];
     
     AFHTTPRequestOperation *operation = [self.manager HTTPRequestOperationWithRequest:request
