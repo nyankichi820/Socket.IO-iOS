@@ -1,13 +1,13 @@
 //
-//  SISocketIOParser.m
+//  SIEngineIOPacket.h
 //  Socket.IO-iOS
 //
 //  Created by masafumi yoshida on 2014/07/01.
 //  Copyright (c) 2014年 masafumi yoshida. All rights reserved.
 //
 
-#import "SISocketIOParser.h"
+#import <Foundation/Foundation.h>
 
-@implementation SISocketIOParser
+@interface SIEngineIOPacket : NSObject
 
 @end
