@@ -19,7 +19,7 @@
     if(self){
         self.timestamp = 0;
         self.readyStatus = SISocketIOTransportStatusClosed;
-        self.parser = [[SISocketIOParser alloc] init];
+        self.parser = [[SIEngineIOParser alloc] init];
     }
     return self;
     
@@ -46,7 +46,7 @@
 
 }
 
-- (void) onPacket:(SISocketIOPacket*)packet{
+- (void) onPacket:(SIEngineIOPacket*)packet{
     [self.delegate onPacket:self packet:packet];
 }
 

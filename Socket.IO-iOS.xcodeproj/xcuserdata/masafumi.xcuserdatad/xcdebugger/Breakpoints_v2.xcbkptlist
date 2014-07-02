@@ -10,11 +10,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "SISocketIOTransportPolling.m"
-            timestampString = "425782629.22047"
+            timestampString = "425829769.328527"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "57"
-            endingLineNumber = "57"
+            startingLineNumber = "60"
+            endingLineNumber = "60"
             landmarkName = "-open"
             landmarkType = "5">
          </BreakpointContent>

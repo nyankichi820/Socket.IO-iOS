@@ -25,9 +25,15 @@
 }
 
 
+-(IBAction)sendMessage:(id)sender{
+    
+    [self.client send:[@"[\"chat message\",\"dsfsdfd\"]" dataUsingEncoding:NSUTF8StringEncoding]];
+    
+}
+
 -(void)socketIOClientOnOpen:(SISocketIOClient *)client{
     
-    [client send:[@"[\"chat message\",\"dsfsdfd\"]" dataUsingEncoding:NSUTF8StringEncoding]];
+   // [client send:[@"[\"chat message\",\"dsfsdfd\"]" dataUsingEncoding:NSUTF8StringEncoding]];
     
 }
 
@@ -37,7 +43,7 @@
 }
 
 
--(void)socketIOClientOnPacket:(SISocketIOClient *)client packet:(SISocketIOPacket *)packet{
+-(void)socketIOClientOnPacket:(SISocketIOClient *)client packet:(SIEngineIOPacket *)packet{
     
     
 }

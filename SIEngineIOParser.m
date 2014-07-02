@@ -6,11 +6,11 @@
 //  Copyright (c) 2014年 masafumi yoshida. All rights reserved.
 //
 
-#import "SISocketIOParser.h"
+#import "SIEngineIOParser.h"
 
-@implementation SISocketIOParser
+@implementation SIEngineIOParser
 
-- (void)parsePayloadBinary:(NSData*)message  completion:(void (^)(SISocketIOPacket*))completion{
+- (void)parsePayloadBinary:(NSData*)message  completion:(void (^)(SIEngineIOPacket*))completion{
     NSLog([message description]);
     NSMutableArray *buffers = [NSMutableArray array];
     
@@ -54,19 +54,19 @@
  
     for(NSData *buffer in buffers){
         //NSLog(@"message: %@",[[NSString alloc] initWithData:buffer encoding:NSUTF8StringEncoding]);
-        SISocketIOPacket *packet = [self parsePacketBinary:buffer];
+        SIEngineIOPacket *packet = [self parsePacketBinary:buffer];
         completion(packet);
     }
 }
 
 
-- (void)parseData:(id)message  completion:(void (^)(SISocketIOPacket*))completion{
+- (void)parseData:(id)message  completion:(void (^)(SIEngineIOPacket*))completion{
 
     if([message isKindOfClass:[NSData class]]){
         [self parsePayloadBinary:message completion:completion];
     }
     else if([message isKindOfClass:[NSString class]]){
-        SISocketIOPacket *packet = [self parsePacket:message];
+        SIEngineIOPacket *packet = [self parsePacket:message];
         completion(packet);
     }
     else{
@@ -76,10 +76,10 @@
 }
 
 
-- (void)encodePayloads:(NSArray*)packets  completion:(void (^)(SISocketIOPacket*))completion{
+- (void)encodePayloads:(NSArray*)packets  completion:(void (^)(SIEngineIOPacket*))completion{
     NSMutableArray *encodePackets = [NSMutableArray array];
     int totalLength = 0;
-    for(SISocketIOPacket *packet in packets){
+    for(SIEngineIOPacket *packet in packets){
         NSData *data = [self encodePayloadBinary:packet];
         NSString *strLength = [NSString stringWithFormat:@"%d",data.length ];
         totalLength += data.length + strLength.length + 2;
@@ -109,7 +109,7 @@
 
 
 
-- (NSData*)encodePayloadBinary:(SISocketIOPacket*)packet{
+- (NSData*)encodePayloadBinary:(SIEngineIOPacket*)packet{
     unsigned char type = [[NSString  stringWithFormat:@"%d",packet.type] characterAtIndex:0];
     
 
@@ -137,7 +137,7 @@
 
 
 
--(SISocketIOPacket *)parsePacketBinary:(NSData*)data{
+-(SIEngineIOPacket *)parsePacketBinary:(NSData*)data{
     
     
     UInt8 type[1];
@@ -153,19 +153,19 @@
     NSData *message  = [NSData dataWithBytes:messageBytes length:(data.length -sizeof(type))];
     NSLog(@"type %c",type[0]);
     NSLog(@"message %@",[[NSString alloc] initWithData:message encoding:NSUTF8StringEncoding]);
-    SISocketIOPacket *packet = [[SISocketIOPacket alloc] init];
+    SIEngineIOPacket *packet = [[SIEngineIOPacket alloc] init];
     packet.type = [NSString stringWithFormat:@"%c",type[0]].intValue;
     packet.data = message;
     return packet;
     
 }
 
--(SISocketIOPacket *)parsePacket:(NSString*)message{
+-(SIEngineIOPacket *)parsePacket:(NSString*)message{
     
     
     NSLog(@"type %c",[message characterAtIndex:0]);
     NSLog(@"message %@",[message substringFromIndex:1]);
-    SISocketIOPacket *packet = [[SISocketIOPacket alloc] init];
+    SIEngineIOPacket *packet = [[SIEngineIOPacket alloc] init];
     packet.type = [NSString stringWithFormat:@"%c",[message characterAtIndex:0]].intValue;
     packet.data = [[message substringFromIndex:1] dataUsingEncoding:NSUTF8StringEncoding];
     return packet;

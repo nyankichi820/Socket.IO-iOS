@@ -7,14 +7,14 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "SISocketIOPacket.h"
+#import "SIEngineIOPacket.h"
 
 
 
-@interface SISocketIOParser : NSObject
+@interface SIEngineIOParser : NSObject
 
-- (void)parseData:(id)message completion:(void (^)(SISocketIOPacket*))completion;
+- (void)parseData:(id)message completion:(void (^)(SIEngineIOPacket*))completion;
 - (void)encodePayloads:(NSArray*)packets completion:(void (^)(NSData*))complete;
--(SISocketIOPacket *)parsePacketBinary:(NSData*)data;
-- (NSData*)encodePayloadBinary:(SISocketIOPacket*)packet;
+-(SIEngineIOPacket *)parsePacketBinary:(NSData*)data;
+- (NSData*)encodePayloadBinary:(SIEngineIOPacket*)packet;
 @end

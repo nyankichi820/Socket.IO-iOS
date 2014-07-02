@@ -8,22 +8,22 @@
 
 #import <Foundation/Foundation.h>
 
-
 typedef enum SISocketIOPacketType : NSInteger {
-    SISocketIOPacketTypeOpen,
-    SISocketIOPacketTypeClose,
-    SISocketIOPacketTypePing,
-    SISocketIOPacketTypePong,
-    SISocketIOPacketTypeMessage,
-    SISocketIOPacketTypeUpgrade,
-    SISocketIOPacketTypeNoop,
-    SISocketIOPacketTypeError
+    SISocketIOPacketTypeConnect = 0,
+    SISocketIOPacketTypeDisconnect =1,
+    SISocketIOPacketTypeEvent = 2,
+    SISocketIOPacketTypeBinaryEvent = 3,
+    SISocketIOPacketTypeAck = 4,
+    SISocketIOPacketTypeBinaryAck = 5,
+    SISocketIOPacketTypeError = 6
 } SISocketIOPacketType;
-
 
 @interface SISocketIOPacket : NSObject
 @property (nonatomic) SISocketIOPacketType type;
-@property (nonatomic,strong) NSData *data;
+@property (nonatomic,strong) NSNumber *id;
+@property (nonatomic,strong) NSString *nsp;
+@property (nonatomic,strong) id data;
+@property (nonatomic) NSInteger attachments;
 -(NSDictionary*)message;
 
 @end

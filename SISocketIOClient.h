@@ -51,7 +51,7 @@ typedef enum SISocketIOClientStatus : int {
 
 -(void)send:(NSData*)data;
 
--(void)sendPacket:(SISocketIOPacketType)type data:(NSData*)data;
+-(void)sendPacket:(SIEngineIOPacketType)type data:(NSData*)data;
 
 -(void)open;
 -(void)close;
@@ -61,7 +61,7 @@ typedef enum SISocketIOClientStatus : int {
 @protocol SISocketIOClientDelegate <NSObject>
 - (void) socketIOClientOnOpen:(SISocketIOClient*)client;
 - (void) socketIOClientOnClose:(SISocketIOClient*)client;
-- (void) socketIOClientOnPacket:(SISocketIOClient*)client packet:(SISocketIOPacket*)packet;
+- (void) socketIOClientOnPacket:(SISocketIOClient*)client packet:(SIEngineIOPacket*)packet;
 - (void) socketIOClientOnError:(SISocketIOClient*)client error:(NSError*)error;
 @end
 

@@ -24,10 +24,12 @@
 		7F3485AC1949CF7600AA004E /* SISocketIOClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F3485AB1949CF7600AA004E /* SISocketIOClient.m */; };
 		7F3485AF1949CF8400AA004E /* SISocketIOPacket.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F3485AE1949CF8400AA004E /* SISocketIOPacket.m */; };
 		7F3485B21949CF9000AA004E /* SISocketIOTransport.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F3485B11949CF9000AA004E /* SISocketIOTransport.m */; };
-		7F3485B51949CF9F00AA004E /* SISocketIOParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F3485B41949CF9F00AA004E /* SISocketIOParser.m */; };
+		7F3485B51949CF9F00AA004E /* SIEngineIOParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F3485B41949CF9F00AA004E /* SIEngineIOParser.m */; };
 		7F3485B81949D03200AA004E /* SISocketIOTransportPolling.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F3485B71949D03200AA004E /* SISocketIOTransportPolling.m */; };
 		7F3485BB1949D05800AA004E /* SISocketIOTransportWebSocket.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F3485BA1949D05800AA004E /* SISocketIOTransportWebSocket.m */; };
 		7F3485BE1949F86800AA004E /* SISocketIOTransportFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F3485BD1949F86800AA004E /* SISocketIOTransportFactory.m */; };
+		7FEB73B11961C869000F0F89 /* SIEngineIOPacket.m in Sources */ = {isa = PBXBuildFile; fileRef = 7FEB73B01961C869000F0F89 /* SIEngineIOPacket.m */; };
+		7FEB73B41961C95A000F0F89 /* SISocketIOParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 7FEB73B31961C95A000F0F89 /* SISocketIOParser.m */; };
 		DD6EE0C0334843BE9A7B4052 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 4C811E76DC8E46A5ADD7CFE3 /* libPods.a */; };
 /* End PBXBuildFile section */
 
@@ -68,14 +70,18 @@
 		7F3485AE1949CF8400AA004E /* SISocketIOPacket.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SISocketIOPacket.m; sourceTree = "<group>"; };
 		7F3485B01949CF9000AA004E /* SISocketIOTransport.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SISocketIOTransport.h; sourceTree = "<group>"; };
 		7F3485B11949CF9000AA004E /* SISocketIOTransport.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SISocketIOTransport.m; sourceTree = "<group>"; };
-		7F3485B31949CF9F00AA004E /* SISocketIOParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SISocketIOParser.h; sourceTree = "<group>"; };
-		7F3485B41949CF9F00AA004E /* SISocketIOParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SISocketIOParser.m; sourceTree = "<group>"; };
+		7F3485B31949CF9F00AA004E /* SIEngineIOParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SIEngineIOParser.h; sourceTree = "<group>"; };
+		7F3485B41949CF9F00AA004E /* SIEngineIOParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SIEngineIOParser.m; sourceTree = "<group>"; };
 		7F3485B61949D03200AA004E /* SISocketIOTransportPolling.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SISocketIOTransportPolling.h; sourceTree = "<group>"; };
 		7F3485B71949D03200AA004E /* SISocketIOTransportPolling.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SISocketIOTransportPolling.m; sourceTree = "<group>"; };
 		7F3485B91949D05800AA004E /* SISocketIOTransportWebSocket.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SISocketIOTransportWebSocket.h; sourceTree = "<group>"; };
 		7F3485BA1949D05800AA004E /* SISocketIOTransportWebSocket.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SISocketIOTransportWebSocket.m; sourceTree = "<group>"; };
 		7F3485BC1949F86800AA004E /* SISocketIOTransportFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SISocketIOTransportFactory.h; sourceTree = "<group>"; };
 		7F3485BD1949F86800AA004E /* SISocketIOTransportFactory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SISocketIOTransportFactory.m; sourceTree = "<group>"; };
+		7FEB73AF1961C869000F0F89 /* SIEngineIOPacket.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SIEngineIOPacket.h; sourceTree = "<group>"; };
+		7FEB73B01961C869000F0F89 /* SIEngineIOPacket.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SIEngineIOPacket.m; sourceTree = "<group>"; };
+		7FEB73B21961C95A000F0F89 /* SISocketIOParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SISocketIOParser.h; sourceTree = "<group>"; };
+		7FEB73B31961C95A000F0F89 /* SISocketIOParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SISocketIOParser.m; sourceTree = "<group>"; };
 		C5D9D5A2D9B4429A92E43559 /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -185,10 +191,8 @@
 			children = (
 				7F3485AA1949CF7600AA004E /* SISocketIOClient.h */,
 				7F3485AB1949CF7600AA004E /* SISocketIOClient.m */,
-				7F3485AD1949CF8400AA004E /* SISocketIOPacket.h */,
-				7F3485AE1949CF8400AA004E /* SISocketIOPacket.m */,
-				7F3485B31949CF9F00AA004E /* SISocketIOParser.h */,
-				7F3485B41949CF9F00AA004E /* SISocketIOParser.m */,
+				7FEB73B51961C962000F0F89 /* EngineIOParser */,
+				7FEB73B61961C969000F0F89 /* SocketIOParser */,
 				7F348641194A884E00AA004E /* Transport */,
 			);
 			name = Classes;
@@ -207,6 +211,28 @@
 				7F3485B11949CF9000AA004E /* SISocketIOTransport.m */,
 			);
 			name = Transport;
+			sourceTree = "<group>";
+		};
+		7FEB73B51961C962000F0F89 /* EngineIOParser */ = {
+			isa = PBXGroup;
+			children = (
+				7FEB73AF1961C869000F0F89 /* SIEngineIOPacket.h */,
+				7FEB73B01961C869000F0F89 /* SIEngineIOPacket.m */,
+				7F3485B31949CF9F00AA004E /* SIEngineIOParser.h */,
+				7F3485B41949CF9F00AA004E /* SIEngineIOParser.m */,
+			);
+			name = EngineIOParser;
+			sourceTree = "<group>";
+		};
+		7FEB73B61961C969000F0F89 /* SocketIOParser */ = {
+			isa = PBXGroup;
+			children = (
+				7F3485AD1949CF8400AA004E /* SISocketIOPacket.h */,
+				7F3485AE1949CF8400AA004E /* SISocketIOPacket.m */,
+				7FEB73B21961C95A000F0F89 /* SISocketIOParser.h */,
+				7FEB73B31961C95A000F0F89 /* SISocketIOParser.m */,
+			);
+			name = SocketIOParser;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -346,10 +372,12 @@
 				7F3485AC1949CF7600AA004E /* SISocketIOClient.m in Sources */,
 				7F3485851949CF4600AA004E /* SIAppDelegate.m in Sources */,
 				7F3485BE1949F86800AA004E /* SISocketIOTransportFactory.m in Sources */,
-				7F3485B51949CF9F00AA004E /* SISocketIOParser.m in Sources */,
+				7F3485B51949CF9F00AA004E /* SIEngineIOParser.m in Sources */,
 				7F3485BB1949D05800AA004E /* SISocketIOTransportWebSocket.m in Sources */,
 				7F34858B1949CF4600AA004E /* SIViewController.m in Sources */,
+				7FEB73B41961C95A000F0F89 /* SISocketIOParser.m in Sources */,
 				7F3485AF1949CF8400AA004E /* SISocketIOPacket.m in Sources */,
+				7FEB73B11961C869000F0F89 /* SIEngineIOPacket.m in Sources */,
 				7F3485B81949D03200AA004E /* SISocketIOTransportPolling.m in Sources */,
 				7F3485811949CF4600AA004E /* main.m in Sources */,
 			);

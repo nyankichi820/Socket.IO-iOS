@@ -59,12 +59,12 @@
 
 
 -(void)send:(NSData*)data{
-    [self sendPacket:SISocketIOPacketTypeMessage data:data];
+    [self sendPacket:SIEngineIOPacketTypeMessage data:data];
     
 }
 
--(void)sendPacket:(SISocketIOPacketType)type data:(NSData*)data{
-    SISocketIOPacket *packet =[[SISocketIOPacket alloc] init];
+-(void)sendPacket:(SIEngineIOPacketType)type data:(NSData*)data{
+    SIEngineIOPacket *packet =[[SIEngineIOPacket alloc] init];
     packet.type = type;
     packet.data = data;
     [self.writeBuffer addObject:packet];
@@ -108,33 +108,33 @@
 
 #pragma socketiostransportdelegate
 
-- (void) onPacket:(SISocketIOTransport*)transport packet:(SISocketIOPacket*)packet{
+- (void) onPacket:(SISocketIOTransport*)transport packet:(SIEngineIOPacket*)packet{
     
     
     switch (packet.type) {
-        case SISocketIOPacketTypeOpen:
+        case SIEngineIOPacketTypeOpen:
             [self onHandshake:transport packet:packet];
             break;
-        case SISocketIOPacketTypeMessage:
+        case SIEngineIOPacketTypeMessage:
               [self.delegate socketIOClientOnPacket:self packet:packet];
             break;
             
-        case SISocketIOPacketTypeClose:
+        case SIEngineIOPacketTypeClose:
               [self.delegate socketIOClientOnClose:self];
             break;
-        case SISocketIOPacketTypePing:
+        case SIEngineIOPacketTypePing:
             
             break;
-        case SISocketIOPacketTypePong:
+        case SIEngineIOPacketTypePong:
             
             break;
-        case SISocketIOPacketTypeNoop:
+        case SIEngineIOPacketTypeNoop:
             
             break;
-        case SISocketIOPacketTypeUpgrade:
+        case SIEngineIOPacketTypeUpgrade:
             
             break;
-        case SISocketIOPacketTypeError:
+        case SIEngineIOPacketTypeError:
          
             break;
             
@@ -157,9 +157,9 @@
     return filtered;
 }
 
--(void)onHandshake:(SISocketIOTransport*)transport packet:(SISocketIOPacket*)packet{
+-(void)onHandshake:(SISocketIOTransport*)transport packet:(SIEngineIOPacket*)packet{
     
-    if(packet.type == SISocketIOPacketTypeOpen){
+    if(packet.type == SIEngineIOPacketTypeOpen){
         self.sid =[packet.message objectForKey:@"sid"];
         self.upgrades = [self filterUpgrades:[packet.message objectForKey:@"upgrades"]];
         self.pingInterval =[[packet.message objectForKey:@"pingInterval"] integerValue];

@@ -8,6 +8,22 @@
 
 #import <Foundation/Foundation.h>
 
-@interface SIEngineIOPacket : NSObject
 
+typedef enum SIEngineIOPacketType : NSInteger {
+    SIEngineIOPacketTypeOpen,
+    SIEngineIOPacketTypeClose,
+    SIEngineIOPacketTypePing,
+    SIEngineIOPacketTypePong,
+    SIEngineIOPacketTypeMessage,
+    SIEngineIOPacketTypeUpgrade,
+    SIEngineIOPacketTypeNoop,
+    SIEngineIOPacketTypeError
+} SIEngineIOPacketType;
+
+
+
+@interface SIEngineIOPacket : NSObject
+@property (nonatomic) SIEngineIOPacketType type;
+@property (nonatomic,strong) NSData *data;
+-(NSDictionary*)message;
 @end

@@ -10,11 +10,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "SISocketIOTransportPolling.m"
-            timestampString = "425793148.126036"
+            timestampString = "425829824.019537"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "93"
-            endingLineNumber = "93"
+            startingLineNumber = "97"
+            endingLineNumber = "97"
             landmarkName = "-doWrite:"
             landmarkType = "5">
          </BreakpointContent>
@@ -169,7 +169,7 @@
                   symbolName = "-[SRWebSocket handlePing:]"
                   moduleName = "Socket.IO-iOS"
                   urlString = "file:///Users/masafumi/Documents/Socket.IO-iOS/Pods/SocketRocket/SocketRocket/SRWebSocket.m"
-                  timestampString = "425793479.932283"
+                  timestampString = "425910294.516613"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "737"
@@ -183,7 +183,7 @@
                   symbolName = "__26-[SRWebSocket handlePing:]_block_invoke"
                   moduleName = "Socket.IO-iOS"
                   urlString = "file:///Users/masafumi/Documents/Socket.IO-iOS/Pods/SocketRocket/SocketRocket/SRWebSocket.m"
-                  timestampString = "425793479.93273"
+                  timestampString = "425910294.517155"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "737"
@@ -392,11 +392,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "SISocketIOTransportPolling.m"
-            timestampString = "425793148.126036"
+            timestampString = "425829824.019537"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "94"
-            endingLineNumber = "94"
+            startingLineNumber = "98"
+            endingLineNumber = "98"
             landmarkName = "-doWrite:"
             landmarkType = "5">
          </BreakpointContent>
@@ -407,7 +407,7 @@
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "SISocketIOParser.m"
+            filePath = "SIEngineIOParser.m"
             timestampString = "425785741.152114"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
@@ -423,7 +423,7 @@
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "SISocketIOParser.m"
+            filePath = "SIEngineIOParser.m"
             timestampString = "425785741.152114"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
@@ -439,7 +439,7 @@
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "SISocketIOParser.m"
+            filePath = "SIEngineIOParser.m"
             timestampString = "425792374.718656"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
@@ -456,11 +456,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Socket.IO-iOS/SIViewController.m"
-            timestampString = "425616418.509386"
+            timestampString = "425827361.65888"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "29"
-            endingLineNumber = "29"
+            startingLineNumber = "35"
+            endingLineNumber = "35"
             landmarkName = "-socketIOClientOnOpen:"
             landmarkType = "5">
          </BreakpointContent>
@@ -520,11 +520,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "SISocketIOTransportPolling.m"
-            timestampString = "425782629.22047"
+            timestampString = "425829769.328527"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "61"
-            endingLineNumber = "61"
+            startingLineNumber = "64"
+            endingLineNumber = "64"
             landmarkName = "-write:"
             landmarkType = "5">
          </BreakpointContent>
@@ -551,7 +551,7 @@
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "SISocketIOParser.m"
+            filePath = "SIEngineIOParser.m"
             timestampString = "425792374.718656"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
@@ -567,7 +567,7 @@
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "SISocketIOParser.m"
+            filePath = "SIEngineIOParser.m"
             timestampString = "425785741.152114"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
@@ -584,12 +584,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Socket.IO-iOSTests/Socket_IO_iOSTests.m"
-            timestampString = "425745239.805627"
+            timestampString = "425867072.992291"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "30"
-            endingLineNumber = "30"
-            landmarkName = "-testPayload"
+            startingLineNumber = "32"
+            endingLineNumber = "32"
+            landmarkName = "-testParseAndDecodePayloadEngineIOPacket"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -600,28 +600,28 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Socket.IO-iOSTests/Socket_IO_iOSTests.m"
-            timestampString = "425745249.947431"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "40"
-            endingLineNumber = "40"
-            landmarkName = "-testPayload"
-            landmarkType = "5">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Socket.IO-iOSTests/Socket_IO_iOSTests.m"
-            timestampString = "425745681.945934"
+            timestampString = "425867072.992291"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "42"
             endingLineNumber = "42"
-            landmarkName = "-testPayload"
+            landmarkName = "-testParseAndDecodePayloadEngineIOPacket"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Socket.IO-iOSTests/Socket_IO_iOSTests.m"
+            timestampString = "425867072.992291"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "44"
+            endingLineNumber = "44"
+            landmarkName = "-testParseAndDecodePayloadEngineIOPacket"
             landmarkType = "5">
             <Locations>
                <Location
@@ -675,7 +675,7 @@
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "SISocketIOParser.m"
+            filePath = "SIEngineIOParser.m"
             timestampString = "425792374.718656"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
@@ -691,7 +691,7 @@
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "SISocketIOParser.m"
+            filePath = "SIEngineIOParser.m"
             timestampString = "425792374.718656"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
@@ -707,7 +707,7 @@
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "SISocketIOParser.m"
+            filePath = "SIEngineIOParser.m"
             timestampString = "425785741.152114"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
@@ -723,7 +723,7 @@
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "SISocketIOParser.m"
+            filePath = "SIEngineIOParser.m"
             timestampString = "425785741.152114"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
@@ -739,7 +739,7 @@
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "SISocketIOParser.m"
+            filePath = "SIEngineIOParser.m"
             timestampString = "425792374.718656"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
@@ -755,7 +755,7 @@
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "SISocketIOParser.m"
+            filePath = "SIEngineIOParser.m"
             timestampString = "425792374.718656"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
@@ -771,7 +771,7 @@
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "SISocketIOParser.m"
+            filePath = "SIEngineIOParser.m"
             timestampString = "425792374.718656"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
@@ -787,7 +787,7 @@
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "SISocketIOParser.m"
+            filePath = "SIEngineIOParser.m"
             timestampString = "425792374.718656"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
@@ -803,7 +803,7 @@
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "SISocketIOParser.m"
+            filePath = "SIEngineIOParser.m"
             timestampString = "425792374.718656"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
@@ -819,7 +819,7 @@
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "SISocketIOParser.m"
+            filePath = "SIEngineIOParser.m"
             timestampString = "425792374.718656"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
@@ -835,7 +835,7 @@
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "SISocketIOParser.m"
+            filePath = "SIEngineIOParser.m"
             timestampString = "425792374.718656"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
@@ -851,7 +851,7 @@
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "SISocketIOParser.m"
+            filePath = "SIEngineIOParser.m"
             timestampString = "425792374.718656"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
@@ -898,11 +898,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "SISocketIOTransportPolling.m"
-            timestampString = "425782665.367334"
+            timestampString = "425829769.328527"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "63"
-            endingLineNumber = "63"
+            startingLineNumber = "66"
+            endingLineNumber = "66"
             landmarkName = "-write:"
             landmarkType = "5">
          </BreakpointContent>
@@ -914,13 +914,43 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "SISocketIOTransportPolling.m"
-            timestampString = "425793148.126036"
+            timestampString = "425829824.019537"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "103"
-            endingLineNumber = "103"
+            startingLineNumber = "106"
+            endingLineNumber = "106"
             landmarkName = "-poll"
             landmarkType = "5">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "__34-[SISocketIOTransportPolling poll]_block_invoke"
+                  moduleName = "Socket.IO-iOS"
+                  urlString = "file:///Users/masafumi/Documents/Socket.IO-iOS/SISocketIOTransportPolling.m"
+                  timestampString = "425829929.988486"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "106"
+                  endingLineNumber = "106"
+                  offsetFromSymbolStart = "204">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "__34-[SISocketIOTransportPolling poll]_block_invoke_2"
+                  moduleName = "Socket.IO-iOS"
+                  urlString = "file:///Users/masafumi/Documents/Socket.IO-iOS/SISocketIOTransportPolling.m"
+                  timestampString = "425829929.9889"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "106"
+                  endingLineNumber = "106"
+                  offsetFromSymbolStart = "60">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -930,11 +960,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "SISocketIOTransportPolling.m"
-            timestampString = "425793009.614204"
+            timestampString = "425829769.328527"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "85"
-            endingLineNumber = "85"
+            startingLineNumber = "87"
+            endingLineNumber = "87"
             landmarkName = "-doWrite:"
             landmarkType = "5">
          </BreakpointContent>
@@ -946,11 +976,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "SISocketIOTransportPolling.m"
-            timestampString = "425793148.126036"
+            timestampString = "425829824.019537"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "90"
-            endingLineNumber = "90"
+            startingLineNumber = "93"
+            endingLineNumber = "93"
             landmarkName = "-doWrite:"
             landmarkType = "5">
          </BreakpointContent>
@@ -962,11 +992,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "SISocketIOTransportPolling.m"
-            timestampString = "425793009.614204"
+            timestampString = "425829769.328527"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "73"
-            endingLineNumber = "73"
+            startingLineNumber = "76"
+            endingLineNumber = "76"
             landmarkName = "-doWrite:"
             landmarkType = "5">
          </BreakpointContent>
@@ -978,12 +1008,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Socket.IO-iOSTests/Socket_IO_iOSTests.m"
-            timestampString = "425785383.679639"
+            timestampString = "425867072.992291"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "57"
-            endingLineNumber = "57"
-            landmarkName = "-testEncodeDecode"
+            startingLineNumber = "59"
+            endingLineNumber = "59"
+            landmarkName = "-testParseAndDecodeEngineIOPacket"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -993,7 +1023,7 @@
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "SISocketIOParser.m"
+            filePath = "SIEngineIOParser.m"
             timestampString = "425785741.152114"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
@@ -1009,7 +1039,7 @@
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "SISocketIOParser.m"
+            filePath = "SIEngineIOParser.m"
             timestampString = "425785741.152114"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
@@ -1025,7 +1055,7 @@
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "SISocketIOParser.m"
+            filePath = "SIEngineIOParser.m"
             timestampString = "425785764.371837"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
@@ -1042,11 +1072,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Socket.IO-iOSTests/Socket_IO_iOSTests.m"
-            timestampString = "425792009.586291"
+            timestampString = "425867072.992291"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "29"
-            endingLineNumber = "29"
+            startingLineNumber = "31"
+            endingLineNumber = "31"
             landmarkName = "@implementation Socket_IO_iOSTests"
             landmarkType = "3">
          </BreakpointContent>
@@ -1057,7 +1087,7 @@
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "SISocketIOParser.m"
+            filePath = "SIEngineIOParser.m"
             timestampString = "425792357.435549"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
@@ -1073,7 +1103,7 @@
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "SISocketIOParser.m"
+            filePath = "SIEngineIOParser.m"
             timestampString = "425792385.272871"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
@@ -1106,11 +1136,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "SISocketIOTransportPolling.m"
-            timestampString = "425793144.773796"
+            timestampString = "425829824.019537"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "100"
-            endingLineNumber = "100"
+            startingLineNumber = "103"
+            endingLineNumber = "103"
             landmarkName = "-poll"
             landmarkType = "5">
          </BreakpointContent>
@@ -1144,6 +1174,490 @@
             startingLineNumber = "85"
             endingLineNumber = "85"
             landmarkName = "-responseObject"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Socket.IO-iOS/SIViewController.m"
+            timestampString = "425827389.58576"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "30"
+            endingLineNumber = "30"
+            landmarkName = "-sendMessage:"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "SISocketIOTransportPolling.m"
+            timestampString = "425829824.019537"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "95"
+            endingLineNumber = "95"
+            landmarkName = "-doWrite:"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "SISocketIOClient.m"
+            timestampString = "425828935.086737"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "188"
+            endingLineNumber = "188"
+            landmarkName = "-onOpen:"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "SISocketIOTransportPolling.m"
+            timestampString = "425829769.328527"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "65"
+            endingLineNumber = "65"
+            landmarkName = "-write:"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Pods/AFNetworking/AFNetworking/AFHTTPRequestOperation.m"
+            timestampString = "425829476.417477"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "127"
+            endingLineNumber = "127"
+            landmarkName = "-setCompletionBlockWithSuccess:failure:"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "SISocketIOTransportPolling.m"
+            timestampString = "425829979.877523"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "107"
+            endingLineNumber = "107"
+            landmarkName = "-poll"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "SISocketIOTransportPolling.m"
+            timestampString = "425830049.872305"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "104"
+            endingLineNumber = "104"
+            landmarkName = "-poll"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "SISocketIOTransportPolling.m"
+            timestampString = "425830104.408787"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "88"
+            endingLineNumber = "88"
+            landmarkName = "-doWrite:"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Socket.IO-iOSTests/Socket_IO_iOSTests.m"
+            timestampString = "425867597.083764"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "82"
+            endingLineNumber = "82"
+            landmarkName = "-testEncodeAndDecodeSocketIOPacketString"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "SISocketIOParser.m"
+            timestampString = "425879230.618255"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "72"
+            endingLineNumber = "72"
+            landmarkName = "-encodeStringData:"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "SISocketIOParser.m"
+            timestampString = "425879901.771669"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "152"
+            endingLineNumber = "152"
+            landmarkName = "-decodeStringData:"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Socket.IO-iOSTests/Socket_IO_iOSTests.m"
+            timestampString = "425877617.04219"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "125"
+            endingLineNumber = "125"
+            landmarkName = "-testEncodeAndDecodeSocketIOPacketStringWithId"
+            landmarkType = "5">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "-[Socket_IO_iOSTests testEncodeAndDecodeSocketIOPacketWithId]"
+                  moduleName = "Socket.IO-iOSTests"
+                  urlString = "file:///Users/masafumi/Documents/Socket.IO-iOS/Socket.IO-iOSTests/Socket_IO_iOSTests.m"
+                  timestampString = "425870854.55056"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "126"
+                  endingLineNumber = "126"
+                  offsetFromSymbolStart = "374">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "-[Socket_IO_iOSTests testEncodeAndDecodeSocketIOPacketWithId]"
+                  moduleName = "Socket.IO-iOSTests"
+                  urlString = "file:///Users/masafumi/Documents/Socket.IO-iOS/Socket.IO-iOSTests/Socket_IO_iOSTests.m"
+                  timestampString = "425870854.550921"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "126"
+                  endingLineNumber = "126"
+                  offsetFromSymbolStart = "779">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "-[Socket_IO_iOSTests testEncodeAndDecodeSocketIOPacketWithId]"
+                  moduleName = "Socket.IO-iOSTests"
+                  urlString = "file:///Users/masafumi/Documents/Socket.IO-iOS/Socket.IO-iOSTests/Socket_IO_iOSTests.m"
+                  timestampString = "425870854.551371"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "126"
+                  endingLineNumber = "126"
+                  offsetFromSymbolStart = "1291">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "SISocketIOParser.m"
+            timestampString = "425879901.771669"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "187"
+            endingLineNumber = "187"
+            landmarkName = "-decodeStringData:"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "SISocketIOParser.m"
+            timestampString = "425879901.771669"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "192"
+            endingLineNumber = "192"
+            landmarkName = "-decodeStringData:"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "SISocketIOParser.m"
+            timestampString = "425879901.771669"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "193"
+            endingLineNumber = "193"
+            landmarkName = "-decodeStringData:"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "SISocketIOParser.m"
+            timestampString = "425879901.771669"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "199"
+            endingLineNumber = "199"
+            landmarkName = "-decodeStringData:"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Socket.IO-iOSTests/Socket_IO_iOSTests.m"
+            timestampString = "425877625.962631"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "84"
+            endingLineNumber = "84"
+            landmarkName = "-testEncodeAndDecodeSocketIOPacketString"
+            landmarkType = "5">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "-[Socket_IO_iOSTests testEncodeAndDecodeSocketIOPacketString]"
+                  moduleName = "Socket.IO-iOSTests"
+                  urlString = "file:///Users/masafumi/Documents/Socket.IO-iOS/Socket.IO-iOSTests/Socket_IO_iOSTests.m"
+                  timestampString = "425877631.125178"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "84"
+                  endingLineNumber = "84"
+                  offsetFromSymbolStart = "353">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "-[Socket_IO_iOSTests testEncodeAndDecodeSocketIOPacketString]"
+                  moduleName = "Socket.IO-iOSTests"
+                  urlString = "file:///Users/masafumi/Documents/Socket.IO-iOS/Socket.IO-iOSTests/Socket_IO_iOSTests.m"
+                  timestampString = "425877631.125564"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "84"
+                  endingLineNumber = "84"
+                  offsetFromSymbolStart = "722">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "-[Socket_IO_iOSTests testEncodeAndDecodeSocketIOPacketString]"
+                  moduleName = "Socket.IO-iOSTests"
+                  urlString = "file:///Users/masafumi/Documents/Socket.IO-iOS/Socket.IO-iOSTests/Socket_IO_iOSTests.m"
+                  timestampString = "425877631.126035"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "84"
+                  endingLineNumber = "84"
+                  offsetFromSymbolStart = "1234">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Socket.IO-iOSTests/Socket_IO_iOSTests.m"
+            timestampString = "425878008.645979"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "100"
+            endingLineNumber = "100"
+            landmarkName = "-testEncodeAndDecodeSocketIOPacketStringWithNameSpace"
+            landmarkType = "5">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "-[Socket_IO_iOSTests testEncodeAndDecodeSocketIOPacketStringWithNameSpace]"
+                  moduleName = "Socket.IO-iOSTests"
+                  urlString = "file:///Users/masafumi/Documents/Socket.IO-iOS/Socket.IO-iOSTests/Socket_IO_iOSTests.m"
+                  timestampString = "425878012.122954"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "100"
+                  endingLineNumber = "100"
+                  offsetFromSymbolStart = "428">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "-[Socket_IO_iOSTests testEncodeAndDecodeSocketIOPacketStringWithNameSpace]"
+                  moduleName = "Socket.IO-iOSTests"
+                  urlString = "file:///Users/masafumi/Documents/Socket.IO-iOS/Socket.IO-iOSTests/Socket_IO_iOSTests.m"
+                  timestampString = "425878012.123387"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "100"
+                  endingLineNumber = "100"
+                  offsetFromSymbolStart = "848">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "-[Socket_IO_iOSTests testEncodeAndDecodeSocketIOPacketStringWithNameSpace]"
+                  moduleName = "Socket.IO-iOSTests"
+                  urlString = "file:///Users/masafumi/Documents/Socket.IO-iOS/Socket.IO-iOSTests/Socket_IO_iOSTests.m"
+                  timestampString = "425878012.123905"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "100"
+                  endingLineNumber = "100"
+                  offsetFromSymbolStart = "1378">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "SISocketIOParser.m"
+            timestampString = "425878288.948139"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "23"
+            endingLineNumber = "23"
+            landmarkName = "-encodeData:"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "SISocketIOParser.m"
+            timestampString = "425879889.837745"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "135"
+            endingLineNumber = "135"
+            landmarkName = "-decodeBinaryData:"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "SISocketIOParser.m"
+            timestampString = "425879890.766507"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "140"
+            endingLineNumber = "140"
+            landmarkName = "-decodeBinaryData:"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Socket.IO-iOSTests/Socket_IO_iOSTests.m"
+            timestampString = "425910259.22977"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "72"
+            endingLineNumber = "72"
+            landmarkName = "-testEncodeAndDecodeSocketIOPacketString"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>

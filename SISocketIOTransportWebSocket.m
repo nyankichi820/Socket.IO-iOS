@@ -64,7 +64,7 @@
 
 - (void)webSocket:(SRWebSocket *)webSocket didReceiveMessage:(id)message{
     
-    [self.parser parseData:message completion:^(SISocketIOPacket *packet) {
+    [self.parser parseData:message completion:^(SIEngineIOPacket *packet) {
         
     }];
 }

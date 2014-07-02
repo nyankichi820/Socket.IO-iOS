@@ -7,7 +7,8 @@
 //
 
 #import <Foundation/Foundation.h>
-
+#import "SISocketIOPacket.h"
 @interface SISocketIOParser : NSObject
-
+- (NSArray*)encodeData:(SISocketIOPacket *)packet;
+-(SISocketIOPacket *)decodeData:(id)data;
 @end

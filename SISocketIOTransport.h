@@ -7,7 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "SISocketIOParser.h"
+#import "SIEngineIOParser.h"
 
 
 typedef enum SISocketIOTransportStatus : int {
@@ -45,7 +45,7 @@ typedef enum SISocketIOTransportStatus : int {
 @property (nonatomic) SISocketIOTransport *transport;
 @property (nonatomic) NSArray *transports;
 @property (nonatomic) NSString *timestampParam;
-@property (nonatomic) SISocketIOParser *parser;
+@property (nonatomic) SIEngineIOParser *parser;
 @property (nonatomic,weak) id <SISocketIOTransportDelegate> delegate;
 
 
@@ -62,7 +62,7 @@ typedef enum SISocketIOTransportStatus : int {
 @end
 
 @protocol SISocketIOTransportDelegate <NSObject>
-- (void) onPacket:(SISocketIOTransport*)transport packet:(SISocketIOPacket*)packet;
+- (void) onPacket:(SISocketIOTransport*)transport packet:(SIEngineIOPacket*)packet;
 - (void) onOpen:(SISocketIOTransport*)transport;
 - (void) onClose:(SISocketIOTransport*)transport;
 - (void) onError:(SISocketIOTransport*)transport error:(NSError*)error;
